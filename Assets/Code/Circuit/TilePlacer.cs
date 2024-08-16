@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class TilePlacer : MonoBehaviour {
 
-    public GameObject currTile;
+    public TileBase currTile;
     public Vector2 clickPos; 
     public Vector2 clickGridPos;
     public Tilemap Tilemap;
@@ -16,8 +16,10 @@ public class TilePlacer : MonoBehaviour {
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(clickPos);
             Vector3Int gridPos = Tilemap.WorldToCell(worldPos);
             
-            if (!Tilemap.HasTile(gridPos)) {
+            if (Tilemap.HasTile(gridPos)) {
                 Debug.Log(worldPos + " " + gridPos);
+                Tilemap.SetTile(gridPos, currTile);
+                //Tilemap.InsertCells(gridPos, new Vector3Int(1,1,1));
             }
         }
     }
