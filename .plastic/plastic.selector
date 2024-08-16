@@ -1,0 +1,4 @@
+repository "RoboLoop CircuitBuilder@AmbitiousIdiot@cloud"
+  path "/"
+    br "/main"
+    co "/main"
