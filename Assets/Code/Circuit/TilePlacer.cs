@@ -10,6 +10,8 @@ public class TilePlacer : MonoBehaviour {
     public Vector2 clickGridPos;
     public Tilemap Tilemap;
 
+    public Inventory inventory;
+    
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
             clickPos = Input.mousePosition;
@@ -22,5 +24,10 @@ public class TilePlacer : MonoBehaviour {
                 //Tilemap.InsertCells(gridPos, new Vector3Int(1,1,1));
             }
         }
+    }
+
+    public void InventorySelect() {
+        //slect itemID = 1 from inventory for now, register user selection later
+        inventory.vert.
     }
 }
