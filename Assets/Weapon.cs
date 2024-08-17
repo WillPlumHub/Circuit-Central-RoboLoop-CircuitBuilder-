@@ -31,11 +31,11 @@ public class Weapon : MonoBehaviour {
 
     IEnumerator shoot() {
         float elapsedTime = 0f;
-        while (elapsedTime < activeDuration) {
-            Instantiate(projectile, spawnPoint.position, spawnPoint.rotation);
+        //while (elapsedTime < activeDuration) {
+            Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
             yield return new WaitForSeconds(firingRate);
-            elapsedTime += firingRate;
-        }
+            //elapsedTime += firingRate;
+        //}
 
     }
 }
