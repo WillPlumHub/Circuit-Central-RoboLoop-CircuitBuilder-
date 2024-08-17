@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class TilePlacer : MonoBehaviour {
 
     public int inventory_Item = 1;
-    public InventorySlots currItem;
+    public ItemInstance currItem;
     public Vector2 clickPos; 
     public Vector2 clickGridPos;
     public Tilemap Tilemap;
@@ -18,15 +18,15 @@ public class TilePlacer : MonoBehaviour {
             clickPos = Input.mousePosition;
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(clickPos);
             Vector3Int gridPos = Tilemap.WorldToCell(worldPos);
-            
-            if (Tilemap.HasTile(gridPos) && currItem.amount > 0 &&
+
+            if (Tilemap.HasTile(gridPos) && currItem.amount > 0
                 
-                Tilemap.GetTile(gridPos).name != inventory.inventory[inventory_Item].name) {
+                && Tilemap.GetTile(gridPos).name != inventory.inventory[inventory_Item].name) {
 
                 //Debug.Log(Tilemap.GetTile(gridPos).name != inventory.inventory[inventory_Item].name);
                 //Debug.Log("H" + Tilemap.GetTile(gridPos).name + "H     H" + inventory.inventory[inventory_Item].tile.name + "H");
-                    
-                InventorySlots tempItem = inventory.inventory[inventory_Item];
+
+                ItemInstance tempItem = inventory.inventory[inventory_Item];
                 tempItem.amount--;
                 inventory.inventory[inventory_Item] = tempItem;
                 

@@ -19,7 +19,6 @@ public class bullet : MonoBehaviour {
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collided");
         if(collision.gameObject.tag == "Enemy") {
             Destroy(gameObject, .3f);
             inMotion = false;
