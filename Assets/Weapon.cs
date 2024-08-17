@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    public int Level;
-    public float health;
+    public int Level = 1;
+    public float health = 1;
     public GameObject projectile;
     public Transform spawnPoint;
     public float firingRate = 1;
@@ -16,13 +16,14 @@ public class Weapon : MonoBehaviour {
     }
 
     IEnumerator shoot() {
-        for (int i = 0; i < numShotsPerSpark; i++) {
+        for (int i = 0; i < numShotsPerSpark*Level; i++) {
             Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
-            yield return new WaitForSeconds(firingRate);
+            yield return new WaitForSeconds(firingRate/Level);
         }
     }
 
     private void Update() {
+        health *= Level;
         if (health <= 0) {
             //play destroy anim
             Destroy(gameObject);
