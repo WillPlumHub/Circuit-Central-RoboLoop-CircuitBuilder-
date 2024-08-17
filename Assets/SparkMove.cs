@@ -33,12 +33,10 @@ public class SparkMove : MonoBehaviour {
                 currNodeIndex = Nodes.Count - 1;
                 Spark.gameObject.SetActive(false);
 
-                //Here's where we activate the Active Reload
-
                 if (Input.GetButton("Jump")) {
                     Spark.gameObject.SetActive(true);
                     currNodeIndex = 0;
-                    boostMult = boostAddition; //Change 
+                    boostMult = boostAddition; //Reference boostAddition, that'll effect the starting boost of the spark
                 }
             }
         }
