@@ -5,10 +5,8 @@ using UnityEngine.Tilemaps;
 
 [CreateAssetMenu]
 
-public class ItemInstance : ScriptableObject
-{
-    // Start is called before the first frame update
-    public string ItemName;
+public class ItemInstance : ScriptableObject {
+    public string itemName;
     public int slotID;
     public TileBase tile;
     public TileBase modifier;

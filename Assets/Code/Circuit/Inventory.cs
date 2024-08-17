@@ -5,31 +5,29 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Tilemaps;
 
-[System.Serializable]
+/*[System.Serializable]
 public struct InventorySlots {
-    public string name;
-    public int slotID;
-    public TileBase tile;
-    public int amount;
+    public string Name;
+    public int SlotID;
+    public TileBase Tile;
+    public TileBase Modifier;
+    public int Amount;
     
-    public InventorySlots(string name, int slotID, TileBase tile, int amount) {
-        this.name = name;
-        this.slotID = slotID;
-        this.tile = tile;
-        this.amount = amount;
+    public InventorySlots(string Name, int SlotID, TileBase Tile, TileBase Modifier, int Amount) : this() {
+        this.Name = Name;
+        this.SlotID = SlotID;
+        this.Tile = Tile;
+        this.Tile = Modifier;
+        this.Amount = Amount;
     }
-}
+}*/
 
 public class Inventory : MonoBehaviour {
 
-    public InventorySlots vert;
-    public InventorySlots hori;
-    public InventorySlots corner;
-    
-    public List<InventorySlots> inventory = new List<InventorySlots>();
+    public List<ItemInstance> inventory = new List<ItemInstance>();
     
     private void Start() {
-
+        /*
         vert.name = "Straight_Vertical";
         //vert.slotID = 1;
         vert.tile = AssetDatabase.LoadAssetAtPath<TileBase>("Assets/Prefabs/Tiles/Circoncept_2.asset");
@@ -45,10 +43,10 @@ public class Inventory : MonoBehaviour {
 
         inventory.Add(vert);
         inventory.Add(hori);
-        inventory.Add(corner);
+        inventory.Add(corner);*/
 
         for (int i = 0; i < inventory.Count; i++) {
-            InventorySlots tempItem = inventory[i];
+            ItemInstance tempItem = inventory[i];
             tempItem.slotID = i + 1;
             inventory[i] = tempItem;
         }
