@@ -610,6 +610,7 @@ MonoBehaviour:
   - {fileID: 868092774}
   - {fileID: 1452019244}
   - {fileID: 27579814}
+  Spark: {fileID: 0}
   moveSpeed: 3
 --- !u!1 &394132488
 GameObject:
@@ -1492,7 +1493,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1125404063}
-  - component: {fileID: 1125404062}
   - component: {fileID: 1125404064}
   m_Layer: 0
   m_Name: Player
@@ -1501,18 +1501,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1125404062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125404061}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 511ce7d371fd5d8488c70d8d26d0052c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1125404063
 Transform:
   m_ObjectHideFlags: 0
