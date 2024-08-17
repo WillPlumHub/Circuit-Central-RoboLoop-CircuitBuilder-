@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class PowerBar : MonoBehaviour
 {
 
-    public double FillPercent = 0;
+    public float PowerBarMultiplier = 5f;
+    public bool PowerBarRoutineRunning = false;
+
+    [SerializeField] private Slider slider;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +21,7 @@ public class PowerBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FillPercent += 0.1;
+        
         
     }
 }

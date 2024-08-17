@@ -621,21 +621,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d8aeb5ee7af734ba5d0ce8e808af66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vert:
-    name: 
-    slotID: 0
-    tile: {fileID: 11400000, guid: f68cf2c72d0ba074da03a92d22de6b59, type: 2}
-    amount: 0
-  hori:
-    name: 
-    slotID: 0
-    tile: {fileID: 11400000, guid: ba2f505cbb8317946837fbcf1f70f08d, type: 2}
-    amount: 0
-  corner:
-    name: 
-    slotID: 0
-    tile: {fileID: 11400000, guid: ed8e879053407c9449406ab9126b78f2, type: 2}
-    amount: 0
   inventory: []
 --- !u!4 &366658108
 Transform:
@@ -890,6 +875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485197242}
   - component: {fileID: 485197243}
+  - component: {fileID: 485197244}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -970,6 +956,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &485197244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485197241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a26561455d3d8346932a64c635af66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerBarMultiplier: 5
+  PowerBarRoutineRunning: 0
+  slider: {fileID: 0}
 --- !u!1 &509277968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,11 +2162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory_Item: 1
-  currItem:
-    name: 
-    slotID: 0
-    tile: {fileID: 0}
-    amount: 0
+  currItem: {fileID: 0}
   clickPos: {x: 0, y: 0}
   clickGridPos: {x: 0, y: 0}
   Tilemap: {fileID: 1013417534}
