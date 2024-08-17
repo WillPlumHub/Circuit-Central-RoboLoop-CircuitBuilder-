@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83692162dbed0b14bbf0694121b5db80, type: 3}
-  m_Name: G Straight Vertical
+  m_Name: Template
   m_EditorClassIdentifier: 
   itemName: 
-  slotID: 2
-  tile: {fileID: 11400000, guid: dd704dfdb720db84581715e802df2a8b, type: 2}
+  slotID: 0
+  tile: {fileID: 0}
   modifier: {fileID: 0}
-  amount: 4
+  amount: 0
