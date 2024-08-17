@@ -4,38 +4,28 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
-    public bool firing = false;
-    
-    
-    
-    
-    
-
-    public GameObject projectile;  // The projectile to spawn
-    public Transform spawnPoint;         // The point where the projectile is spawned
-    public float firingRate = 1f;      // Time in seconds between each shot
-    public float activeDuration = 5f;      // Total duration to fire projectiles
-
+    public int Level;
+    public float health;
+    public GameObject projectile;
+    public Transform spawnPoint;
+    public float firingRate = 1;
+    public float numShotsPerSpark = 5;
 
     public void OnTriggerEnter2D(Collider2D collision) {
         StartCoroutine(shoot());
     }
 
-    private void Update() {
-        if (firing == true) {
-            
-            
-            
+    IEnumerator shoot() {
+        for (int i = 0; i < numShotsPerSpark; i++) {
+            Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
+            yield return new WaitForSeconds(firingRate);
         }
     }
 
-    IEnumerator shoot() {
-        float elapsedTime = 0f;
-        //while (elapsedTime < activeDuration) {
-            Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
-            yield return new WaitForSeconds(firingRate);
-            //elapsedTime += firingRate;
-        //}
-
+    private void Update() {
+        if (health <= 0) {
+            //play destroy anim
+            Destroy(gameObject);
+        }
     }
 }
