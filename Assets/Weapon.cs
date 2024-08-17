@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour {
     public float damage;
     public GameObject projectile;
     public Transform spawnPoint;
+    public Transform stallPoint;
     public float firingRate = 1;
     public float numShotsPerSpark = 5;
     public Enemy enemy;
@@ -30,6 +31,7 @@ public class Weapon : MonoBehaviour {
 
     IEnumerator shoot() {
         for (int i = 0; i < numShotsPerSpark * Level; i++) {
+            yield return new WaitForSeconds(firingRate / Level);
             Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
 
             if (enemy.element == elementalEffect) {
@@ -38,12 +40,13 @@ public class Weapon : MonoBehaviour {
                 enemy.health -= damage;
             }
 
-            yield return new WaitForSeconds(firingRate/Level);
+            
         }
     }
 
     IEnumerator delay() {
         player.GetComponent<SparkMove>().moving = false;
+        player.GetComponent<SparkMove>().Spark.transform.position = stallPoint.position;
         yield return new WaitForSeconds(delayTime);
         player.GetComponent<SparkMove>().moving = true;
     }

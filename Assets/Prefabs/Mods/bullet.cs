@@ -5,7 +5,8 @@ using UnityEngine;
 public class bullet : MonoBehaviour {
 
     public float firingSpeed;
-    public float despawnTime;
+    public float hitDespawnTime;
+    public float missDespawnTime;
     public bool inMotion;
 
     void Awake() {
@@ -20,11 +21,11 @@ public class bullet : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Enemy") {
-            Destroy(gameObject, .3f);
+            Destroy(gameObject, hitDespawnTime);
             inMotion = false;
         }
         else {
-                Destroy(this.gameObject, despawnTime);
+                Destroy(this.gameObject, missDespawnTime);
         }
     }
 }

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83692162dbed0b14bbf0694121b5db80, type: 3}
-  m_Name: G Straight Vertical
+  m_Script: {fileID: 11500000, guid: e569f9fc76467634b8ec2f4e4853cb6a, type: 3}
+  m_Name: Pistol
   m_EditorClassIdentifier: 
   itemName: 
-  slotID: 2
-  tile: {fileID: 11400000, guid: dd704dfdb720db84581715e802df2a8b, type: 2}
-  amount: 3
+  slotID: 4
+  modifier: {fileID: 0}
+  amount: 95

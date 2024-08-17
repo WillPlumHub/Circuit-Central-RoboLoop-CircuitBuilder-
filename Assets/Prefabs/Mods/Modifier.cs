@@ -5,9 +5,9 @@ using UnityEngine.Tilemaps;
 
 [CreateAssetMenu]
 
-public class ItemInstance : ScriptableObject {
+public class Modifier : ScriptableObject {
     public string itemName;
     public int slotID;
-    public TileBase tile;
+    public GameObject modifier;
     public int amount;
 }
