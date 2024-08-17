@@ -987,7 +987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotID: 1
   tilePlacer: {fileID: 1125404064}
-  itemInstance: {fileID: 11400000, guid: f86356eb1e7be02438d6c65766333233, type: 2}
+  itemInstance: {fileID: 11400000, guid: 15fc9f3df6908df43b5a6be8fd443df6, type: 2}
 --- !u!61 &564118486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2341,7 +2341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotID: 2
   tilePlacer: {fileID: 1125404064}
-  itemInstance: {fileID: 11400000, guid: 9ddac7399ca001e4a85dabc25609afd9, type: 2}
+  itemInstance: {fileID: 11400000, guid: 8b652345e0fe80e4e8919a4b63dec102, type: 2}
 --- !u!61 &1139602902
 BoxCollider2D:
   m_ObjectHideFlags: 0

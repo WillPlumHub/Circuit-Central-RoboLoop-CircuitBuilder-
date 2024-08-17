@@ -16,4 +16,4 @@ MonoBehaviour:
   slotID: 2
   tile: {fileID: 11400000, guid: dd704dfdb720db84581715e802df2a8b, type: 2}
   modifier: {fileID: 0}
-  amount: 0
+  amount: 4
