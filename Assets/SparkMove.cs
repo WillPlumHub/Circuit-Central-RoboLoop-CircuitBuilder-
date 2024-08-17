@@ -5,6 +5,7 @@ using UnityEngine;
 public class SparkMove : MonoBehaviour {
 
     [SerializeField] public List<Transform> Nodes;
+    public GameObject Spark;
     public float moveSpeed;
     private int currNodeIndex;
 
@@ -18,14 +19,14 @@ public class SparkMove : MonoBehaviour {
         Transform targetNode = Nodes[currNodeIndex];
         float step = moveSpeed * Time.deltaTime;
 
-        transform.position = Vector3.MoveTowards(transform.position, targetNode.position, step);
-        if (Vector3.Distance(transform.position, targetNode.position) < 0.00001f) {
+        Spark.transform.position = Vector3.MoveTowards(Spark.transform.position, targetNode.position, step);
+        if (Vector3.Distance(Spark.transform.position, targetNode.position) < 0.00001f) {
             currNodeIndex++;
             if(currNodeIndex >= Nodes.Count) {
-                gameObject.SetActive(false);
+                Spark.gameObject.SetActive(false);
                 if (Input.GetButton("Jump"))
                 {
-                    gameObject.SetActive(true);
+                    Spark.gameObject.SetActive(true);
                     currNodeIndex = 0;
                 }
             }
