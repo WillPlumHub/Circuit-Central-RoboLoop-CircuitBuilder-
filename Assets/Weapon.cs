@@ -14,9 +14,18 @@ public class Weapon : MonoBehaviour {
     public float firingRate = 1;
     public float numShotsPerSpark = 5;
     public Enemy enemy;
+    public bool sparkDelay;
+    public float delayTime;
+    public GameObject player;
 
+    void Start() {
+        player = GameObject.FindWithTag("Player");
+    }
     public void OnTriggerEnter2D(Collider2D collision) {
         StartCoroutine(shoot());
+        if (sparkDelay && delayTime > 0) {
+            StartCoroutine(delay());
+        }
     }
 
     IEnumerator shoot() {
@@ -31,6 +40,12 @@ public class Weapon : MonoBehaviour {
 
             yield return new WaitForSeconds(firingRate/Level);
         }
+    }
+
+    IEnumerator delay() {
+        player.GetComponent<SparkMove>().moving = false;
+        yield return new WaitForSeconds(delayTime);
+        player.GetComponent<SparkMove>().moving = true;
     }
 
     private void Update() {

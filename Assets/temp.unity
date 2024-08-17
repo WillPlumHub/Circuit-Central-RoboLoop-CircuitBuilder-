@@ -431,9 +431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388db71a55863db4b9741d273b990af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1328970452}
   slotID: 0
   tilePlacer: {fileID: 1125404064}
+  itemInstance: {fileID: 11400000, guid: 5aea4229f3c756b41a3dc0dd59c1f52b, type: 2}
 --- !u!61 &267914043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -985,9 +985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388db71a55863db4b9741d273b990af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1328970452}
   slotID: 1
   tilePlacer: {fileID: 1125404064}
+  itemInstance: {fileID: 11400000, guid: f86356eb1e7be02438d6c65766333233, type: 2}
 --- !u!61 &564118486
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2139,7 +2139,7 @@ GameObject:
   - component: {fileID: 1125404066}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2213,6 +2213,7 @@ MonoBehaviour:
   boostMult: 0
   boostAddition: 3
   decrement: 3
+  moving: 1
 --- !u!114 &1125404066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2338,9 +2339,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388db71a55863db4b9741d273b990af8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1328970452}
   slotID: 2
   tilePlacer: {fileID: 1125404064}
+  itemInstance: {fileID: 11400000, guid: 9ddac7399ca001e4a85dabc25609afd9, type: 2}
 --- !u!61 &1139602902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2500,11 +2501,6 @@ MonoBehaviour:
 --- !u!4 &1328970451 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3062809180719262565, guid: ac40e50c05ceadf4fa8eb70196cd3a3c, type: 3}
-  m_PrefabInstance: {fileID: 1893814243}
-  m_PrefabAsset: {fileID: 0}
---- !u!20 &1328970452 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4671541697137330160, guid: ac40e50c05ceadf4fa8eb70196cd3a3c, type: 3}
   m_PrefabInstance: {fileID: 1893814243}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1416534071
@@ -2797,6 +2793,9 @@ MonoBehaviour:
   firingRate: 1
   numShotsPerSpark: 5
   enemy: {fileID: 892227872}
+  sparkDelay: 1
+  delayTime: 1
+  player: {fileID: 0}
 --- !u!58 &1463555238
 CircleCollider2D:
   m_ObjectHideFlags: 0

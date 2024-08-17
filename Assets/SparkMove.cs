@@ -12,9 +12,16 @@ public class SparkMove : MonoBehaviour {
     public float decrement = 1;
     private int currNodeIndex;
 
+    public bool moving = true;
+
+
     void Update() {
-        if (Nodes == null || Nodes.Count == 0) return;
+        if (Nodes == null || Nodes.Count == 0) {
+            return;
+        }
+        if (moving) {
             moveTowardsNode();
+        }
         if (boostMult > 1) {
             boostMult -= decrement * Time.deltaTime;
         } else if (boostMult < 1) {
