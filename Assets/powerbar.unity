@@ -2127,6 +2127,7 @@ GameObject:
   - component: {fileID: 1125404064}
   - component: {fileID: 1125404065}
   - component: {fileID: 1125404066}
+  - component: {fileID: 1125404067}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2203,6 +2204,7 @@ MonoBehaviour:
   boostMult: 0
   boostAddition: 3
   decrement: 3
+  moving: 1
 --- !u!114 &1125404066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2219,6 +2221,21 @@ MonoBehaviour:
   encounters: []
   timer: 0
   active: 0
+--- !u!114 &1125404067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125404061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a26561455d3d8346932a64c635af66d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerBarMultiplier: 5
+  PowerBarRoutineRunning: 0
+  slider: {fileID: 0}
 --- !u!1 &1128603171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,6 +2905,9 @@ MonoBehaviour:
   firingRate: 1
   numShotsPerSpark: 5
   enemy: {fileID: 892227872}
+  sparkDelay: 0
+  delayTime: 0
+  player: {fileID: 0}
 --- !u!58 &1463555238
 CircleCollider2D:
   m_ObjectHideFlags: 0
