@@ -2366,11 +2366,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7467bff46ca90ab46a2e1c406b980c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firing: 0
+  Level: 0
+  health: 6
   projectile: {fileID: 610069474776579919, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
   spawnPoint: {fileID: 1000358145}
   firingRate: 0
-  activeDuration: 5
+  numShotsPerSpark: 5
 --- !u!58 &1463555238
 CircleCollider2D:
   m_ObjectHideFlags: 0
