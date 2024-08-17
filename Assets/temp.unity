@@ -759,11 +759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123214137941669686, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5696698
+      value: 1.23
       objectReference: {fileID: 0}
     - target: {fileID: 7123214137941669686, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8273661
+      value: 4.74
       objectReference: {fileID: 0}
     - target: {fileID: 7123214137941669686, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -922,7 +922,7 @@ GameObject:
   - component: {fileID: 892227869}
   m_Layer: 0
   m_Name: SlimeEnemyNeutral-Sheet_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2572,15 +2572,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1067290151563424564, guid: be2487de9200cd145b0519b1ca9dcd44, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5907141
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 1067290151563424564, guid: be2487de9200cd145b0519b1ca9dcd44, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6418787
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1067290151563424564, guid: be2487de9200cd145b0519b1ca9dcd44, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.93353
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1067290151563424564, guid: be2487de9200cd145b0519b1ca9dcd44, type: 3}
       propertyPath: m_LocalRotation.w
