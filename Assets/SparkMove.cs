@@ -12,7 +12,6 @@ public class SparkMove : MonoBehaviour {
     public float decrement = 1;
     private int currNodeIndex;
 
-    // Update is called once per frame
     void Update() {
         if (Nodes == null || Nodes.Count == 0) return;
             moveTowardsNode();
@@ -33,10 +32,13 @@ public class SparkMove : MonoBehaviour {
             if(currNodeIndex >= Nodes.Count) {
                 currNodeIndex = Nodes.Count - 1;
                 Spark.gameObject.SetActive(false);
+
+                //Here's where we activate the Active Reload
+
                 if (Input.GetButton("Jump")) {
                     Spark.gameObject.SetActive(true);
                     currNodeIndex = 0;
-                    boostMult = boostAddition;
+                    boostMult = boostAddition; //Change 
                 }
             }
         }
