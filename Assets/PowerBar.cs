@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class PowerBar : MonoBehaviour
