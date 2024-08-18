@@ -64,7 +64,11 @@ public class Weapon : MonoBehaviour {
 
     IEnumerator delay() {
         player.GetComponent<SparkMove>().moving = false;
-        player.GetComponent<SparkMove>().Spark.transform.position = stallPoint.position;
+        
+        
+        //player.GetComponent<SparkMove>().Spark.transform.position = stallPoint.position;
+        player.transform.position = Vector3.MoveTowards(player.transform.position, stallPoint.position, 2);
+
         yield return new WaitForSeconds(delayTime);
         player.GetComponent<SparkMove>().moving = true;
     }
