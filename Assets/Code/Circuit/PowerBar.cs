@@ -7,16 +7,20 @@ using System;
 public class PowerBar : MonoBehaviour
 {
 
-    public float powerBarChargeSpeed = .01F;
-    public bool powerBarRoutineRunning = false;
-    public bool powerBarRunningUp = true;
-    public float currentSliderValue;
+    public float powerBarChargeSpeed = .25F;
+    public bool powerBarRoutineRunning = true;
+    
 
     public Slider powerBarSlider;
 
+    private float currentSliderValue;
     private float powerBarMin;
     private float powerBarMax;
-    
+
+
+    private float interval = .01f;
+    private float timer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,21 +34,30 @@ public class PowerBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        currentSliderValue = powerBarSlider.value;
-        powerBarSlider.value += powerBarChargeSpeed;
-        
-        if(currentSliderValue == powerBarMax)
+        if (powerBarRoutineRunning)
         {
-            powerBarSlider.value = 0;
-            powerBarChargeSpeed = UnityEngine.Random.Range(.1F, 1F);
-        }
+            timer += Time.deltaTime;
+            if (timer >= interval)
+            {
+                timer -= interval;
 
-        Debug.Log(currentSliderValue);
+                currentSliderValue = powerBarSlider.value;
+                powerBarSlider.value += powerBarChargeSpeed;
 
-        if(currentSliderValue < powerBarMax)
-        {
-            powerBarSlider.value += powerBarChargeSpeed;
+                if (currentSliderValue == powerBarMax)
+                {
+                    powerBarSlider.value = 0;
+                    powerBarChargeSpeed = UnityEngine.Random.Range(.1F, 1F);
+                }
+
+                Debug.Log(currentSliderValue);
+
+                if (currentSliderValue < powerBarMax)
+                {
+                    powerBarSlider.value += powerBarChargeSpeed;
+                }
+            }
         }
+       
     }
 }
