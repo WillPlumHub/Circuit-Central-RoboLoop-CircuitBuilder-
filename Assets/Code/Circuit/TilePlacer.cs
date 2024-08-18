@@ -22,8 +22,14 @@ public class TilePlacer : MonoBehaviour {
     public Tilemap Tilemap; 
     public Inventory inventory;
     public pauseMenu pauseMenu;
+    public ModifierHandler modHandler;
+
     #endregion
 
+    void Start()
+    {
+        modHandler = FindObjectOfType<ModifierHandler>();
+    }
 
     void Update() {
         if (!pauseMenu.isPaused) {
@@ -63,6 +69,7 @@ public class TilePlacer : MonoBehaviour {
             GameObject tileOverlay = Instantiate(currMod.modifier, new Vector3(gridPos.x + .5f, gridPos.y + .5f, (float)gridPos.z), Quaternion.identity);
             tileOverlay.GetComponent<SpriteRenderer>().sprite = currMod.overlaySprite;
             tileOverlay.GetComponent<SpriteRenderer>().sortingOrder = 3;
+            modHandler.SetupMod(tileOverlay);
             Debug.Log("Functional");
         }
     }
