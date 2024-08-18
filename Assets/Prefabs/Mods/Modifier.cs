@@ -8,6 +8,7 @@ using UnityEngine.Tilemaps;
 public class Modifier : ScriptableObject {
     public string itemName;
     public int slotID;
+    public Sprite overlaySprite;
     public GameObject modifier;
     public int amount;
 }

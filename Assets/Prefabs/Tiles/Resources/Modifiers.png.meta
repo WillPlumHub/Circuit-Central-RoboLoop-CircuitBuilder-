@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tiles_0
+      name: Modifiers_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c51e638fa7e194f44bc695deb877df8c
-      internalID: -248491031
+      spriteID: 240480dced02b754894dd0a9a502020e
+      internalID: 2101484134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_1
+      name: Modifiers_1
       rect:
         serializedVersion: 2
         x: 32
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73dc85c1cbbcabe40a8268ae10efffda
-      internalID: -1310490834
+      spriteID: f9484f46c7986344faf64b325dd4bb74
+      internalID: 1610792265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_2
+      name: Modifiers_2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ed1ec4650caaa14f85266a564136b84
-      internalID: -276417193
+      spriteID: f4dd2543937d1d74b8c943a6edb96465
+      internalID: 1418400251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_3
+      name: Modifiers_3
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4a843ecb01a522479c51b0985f95c3a
-      internalID: -1880575829
+      spriteID: 5361850fb1703e54286d6c8c67fdd5d5
+      internalID: -187329194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_4
+      name: Modifiers_4
       rect:
         serializedVersion: 2
         x: 32
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c9bc083e54bd9e44b40825235cf7c20
-      internalID: -1694466100
+      spriteID: c9e1f361f0e6e1640846965e7d34979b
+      internalID: 279436684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_5
+      name: Modifiers_5
       rect:
         serializedVersion: 2
         x: 64
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c47794074fc32b0449e999a41fcb126e
-      internalID: -122156771
+      spriteID: 9dcc9c7b83751204c81166b69c71b490
+      internalID: -1054978088
       vertices: []
       indices: 
       edges: []
@@ -233,12 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tiles_0: -248491031
-      tiles_1: -1310490834
-      tiles_2: -276417193
-      tiles_3: -1880575829
-      tiles_4: -1694466100
-      tiles_5: -122156771
+      Modifiers_0: 2101484134
+      Modifiers_1: 1610792265
+      Modifiers_2: 1418400251
+      Modifiers_3: -187329194
+      Modifiers_4: 279436684
+      Modifiers_5: -1054978088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
