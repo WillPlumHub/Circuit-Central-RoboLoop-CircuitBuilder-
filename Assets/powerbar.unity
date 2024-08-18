@@ -616,12 +616,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366658106}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96d8aeb5ee7af734ba5d0ce8e808af66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: []
+  modifiers: []
 --- !u!4 &366658108
 Transform:
   m_ObjectHideFlags: 0
@@ -875,7 +876,6 @@ GameObject:
   m_Component:
   - component: {fileID: 485197242}
   - component: {fileID: 485197243}
-  - component: {fileID: 485197244}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -950,27 +950,12 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1353600443}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &485197244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485197241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a26561455d3d8346932a64c635af66d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PowerBarMultiplier: 5
-  PowerBarRoutineRunning: 0
-  slider: {fileID: 0}
 --- !u!1 &509277968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,14 +1263,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d7fdb2f9fb6245bf3462ce31ef99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 
   health: 20
-  drops: []
-  prog: {fileID: 1125404066}
+  element: 
+  hostile: 0
   firingRate: 1
   projectile: {fileID: 610069474776579919, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
   spawnPoint: {fileID: 376458600}
-  hostile: 0
+  prog: {fileID: 1125404066}
+  inventory: {fileID: 0}
+  itemDrop: {fileID: 0}
 --- !u!4 &902998661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1067290151563424564, guid: be2487de9200cd145b0519b1ca9dcd44, type: 3}
@@ -2157,17 +2143,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125404061}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c00c01ef0e19db74aa02ffca031e9f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inventory_Item: 1
   currItem: {fileID: 0}
+  currMod: {fileID: 0}
+  usingTiles: 0
   clickPos: {x: 0, y: 0}
   clickGridPos: {x: 0, y: 0}
   Tilemap: {fileID: 1013417534}
   inventory: {fileID: 366658107}
+  pauseMenu: {fileID: 0}
+  modHandler: {fileID: 0}
 --- !u!114 &1125404065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2201,10 +2191,10 @@ MonoBehaviour:
   - {fileID: 27579814}
   Spark: {fileID: 372484926}
   moveSpeed: 3
+  moving: 1
   boostMult: 0
   boostAddition: 3
   decrement: 3
-  moving: 1
 --- !u!114 &1125404066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2233,9 +2223,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a26561455d3d8346932a64c635af66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerBarMultiplier: 5
-  PowerBarRoutineRunning: 0
-  slider: {fileID: 0}
+  powerBarChargeSpeed: 0.05
+  powerBarRoutineRunning: 0
+  powerBarRunningUp: 1
+  currentSliderValue: 0
+  powerBarSlider: {fileID: 485197243}
 --- !u!1 &1128603171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,19 +2887,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7467bff46ca90ab46a2e1c406b980c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
+  Level: 1
+  levelUp: 0
+  damage: 1
   elementalBonus: 1.5
   elementalEffect: 
-  Level: 1
-  health: 5
-  damage: 1
+  enemy: {fileID: 892227872}
+  BattleCam: {fileID: 0}
   projectile: {fileID: 610069474776579919, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
   spawnPoint: {fileID: 1000358145}
   firingRate: 1
   numShotsPerSpark: 5
-  enemy: {fileID: 892227872}
+  stallPoint: {fileID: 0}
   sparkDelay: 0
   delayTime: 0
   player: {fileID: 0}
+  RoboStats: {fileID: 0}
 --- !u!58 &1463555238
 CircleCollider2D:
   m_ObjectHideFlags: 0
