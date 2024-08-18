@@ -49,7 +49,9 @@ public class Weapon : MonoBehaviour {
     }
 
     IEnumerator shoot() {
-        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+        if (enemy != null) {
+            enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+        }
         for (int i = 0; i < numShotsPerSpark * Level; i++) {
             yield return new WaitForSeconds(firingRate / Level);
             this.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("IsFiring");

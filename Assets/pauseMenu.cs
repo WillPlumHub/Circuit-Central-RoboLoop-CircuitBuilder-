@@ -33,7 +33,7 @@ public class pauseMenu : MonoBehaviour {
         isPaused = true;
     }
 
-    void UnpauseGame() {
+    public void UnpauseGame() {
         Menu.SetActive(false);
         Time.timeScale = 1f;
         AudioListener.pause = false;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8905644082945367689}
   - component: {fileID: 1832191844852725829}
   - component: {fileID: 6343385058526704164}
+  - component: {fileID: 7645624962201166103}
   m_Layer: 0
   m_Name: Balloon
   m_TagString: Untagged
@@ -105,6 +106,7 @@ MonoBehaviour:
   amplitude: 0.5
   frequency: 1.5
   inventory: {fileID: 0}
+  item: {fileID: 0}
 --- !u!58 &6343385058526704164
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -140,3 +142,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &7645624962201166103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923876214198380993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220beac5384774444b05514058ccb62c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - {fileID: 11400000, guid: 5db3ef908e8709a45a160549ad21bfc1, type: 2}
+  - {fileID: 11400000, guid: 1df6cbae72ad78840bac1ac311addcfd, type: 2}
+  dropSpawns: []
+  dropBoost: 1
+  inventory: {fileID: 0}

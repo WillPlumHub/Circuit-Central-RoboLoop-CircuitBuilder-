@@ -19,42 +19,28 @@ public class Balloons : MonoBehaviour {
 
     [Header("Script References")]
     public Inventory inventory;
+    public ItemDrop item;
     #endregion
     
     void Start() {
+        randomNumber = Random.Range(0, 5);
         startPos = transform.position;
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        item = GetComponent<ItemDrop>();
     }
 
     void Update() {
-        //movement
-        float x = startPos.x + Time.time * moveSpeed;
-        float y = startPos.y + Mathf.Sin(Time.time * frequency) * amplitude; 
-        transform.position = new Vector3(x, y, startPos.z);
+        movement();
     }
 
-    int NewRandomNumber() {
-        for (int i = 0; randomNumber == lastNumber && i < maxAttempts; i++) {
-            randomNumber = Random.Range(0, inventory.inventory.Count + inventory.modifiers.Count);
-        }
-        lastNumber = randomNumber;
-        Debug.Log("Number: " + lastNumber);
-        return lastNumber;
-    }
-
-    void DropItem(int index) {
-        if (index < inventory.inventory.Count) {
-            inventory.inventory[index].amount++;
-            Debug.Log("Item dropped: " + inventory.inventory[index].name);
-        } else {
-            index -= inventory.inventory.Count;
-            inventory.modifiers[index].amount++;
-            Debug.Log("Mod dropped: " + index + inventory.modifiers[index].name);
-        }
+    void movement() {
+        float x = transform.position.x + Time.deltaTime * moveSpeed;
+        float y = startPos.y + Mathf.Sin(Time.time * frequency) * amplitude * randomNumber;
+        this.transform.position = new Vector3(x, y, startPos.z);
     }
 
     private void OnMouseDown() {
-        DropItem(NewRandomNumber()); //drop item based on last randomly generated number
+        item.ItemDrops();
         //play pop anim
         Destroy(gameObject);
     }
