@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class CloverMechanic : MonoBehaviour
 {
-    ItemDrop itemDrop;
+    Progression progression;
     void Start()
     {
-        itemDrop = FindObjectOfType<ItemDrop>();
+        progression = FindObjectOfType<Progression>();
     }
-
-
     void OnTriggerEnter2D(Collider2D collision)
     {
-        itemDrop.dropBoost +=0.05f;
+        progression.encounters[progression.currEnemyRef].GetComponent<ItemDrop>().dropBoost +=0.05f;
     }
 }

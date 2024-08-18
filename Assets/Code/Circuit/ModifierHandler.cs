@@ -40,28 +40,7 @@ public class ModifierHandler : MonoBehaviour
         }
         if (ModImage.name == "tiles_0")
         {
-            Debug.Log("Setting up " + Modifier.name);
-            Vector3Int Location = Vector3Int.FloorToInt(Modifier.gameObject.transform.position);
-            if (!TilePresent(new Vector3Int(Location.x, Location.y - 1, Location.z)))
-            {
-                Modifier.transform.GetChild(0).transform.position = new Vector3(Modifier.transform.position.x, Modifier.transform.position.y - 1);
-                return;
-            }
-            else if (!TilePresent(new Vector3Int(Location.x - 1, Location.y - 1, Location.z)))
-            {
-                Modifier.transform.GetChild(0).transform.position = new Vector3(Modifier.transform.position.x - 1, Modifier.transform.position.y);
-                return;
-            }
-            else if (!TilePresent(new Vector3Int(Location.x, Location.y + 1, Location.z)))
-            {
-                Modifier.transform.GetChild(0).transform.position = new Vector3(Modifier.transform.position.x, Modifier.transform.position.y + 1);
-                return;
-            }
-            else if (!TilePresent(new Vector3Int(Location.x + 1, Location.y, Location.z)))
-            {
-                Modifier.transform.GetChild(0).transform.position = new Vector3(Modifier.transform.position.x + 1, Modifier.transform.position.y);
-                return;
-            }
+
 
         }
     }
