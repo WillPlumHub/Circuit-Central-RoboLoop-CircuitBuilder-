@@ -1,43 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pauseMenu : MonoBehaviour {
 
     #region Variables
-    public static bool isPaused;
     public GameObject Menu;
-    
-    [Header("Component References")]
-    SpriteRenderer spriteRenderer;
-    BoxCollider2D boxCol;
+    public static bool isPaused;
     #endregion
 
     void Start() {
-        spriteRenderer = Menu.GetComponent<SpriteRenderer>(); spriteRenderer.enabled = false;
-        boxCol = Menu.GetComponent<BoxCollider2D>(); boxCol.enabled = false;
+        Menu.SetActive(false);
     }
-
+    
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            isPaused = !isPaused;
-            PauseGame();
+            if (isPaused) {
+                UnpauseGame();
+            } else {
+                PauseGame();
+            }
         }
     }
 
     void PauseGame() {
-        if (isPaused) {
-            Time.timeScale = 0f;
-            AudioListener.pause = true;
-            spriteRenderer.enabled = true;
-            if (spriteRenderer.sortingOrder == 0 ) spriteRenderer.sortingOrder = 1;
-            boxCol.enabled = true;
-        } else {
-            Time.timeScale = 1;
-            AudioListener.pause = false;
-            spriteRenderer.enabled = false;
-            boxCol.enabled = false;
-        }
+        Menu.SetActive(true);
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+        isPaused = true;
+
+    }
+
+    void UnpauseGame() {
+        Menu.SetActive(false);
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+        isPaused = false;
+    }
+    /*
+    public void Options() {
+        
+    }*/
+
+    public void GoToMainMenu() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("SampleScene");
     }
 }
