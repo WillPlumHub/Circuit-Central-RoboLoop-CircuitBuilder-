@@ -39,6 +39,7 @@ public class SparkMove : MonoBehaviour {
         float step = (moveSpeed * boostMult) * Time.deltaTime;
 
         Spark.transform.position = Vector3.MoveTowards(Spark.transform.position, targetNode.position, step);
+
         if (Vector3.Distance(Spark.transform.position, targetNode.position) < 0.00001f) {
             currNodeIndex++;
             if(currNodeIndex >= Nodes.Count) {

@@ -35,6 +35,7 @@ public class Weapon : MonoBehaviour {
 
     void Start() {
         player = GameObject.FindWithTag("Player");
+        Progression = player.GetComponent<Progression>();
         Camera[] cameras = Camera.allCameras;
         foreach (Camera camera in cameras) {
             if (camera.name == "BattleCam") {
@@ -50,7 +51,7 @@ public class Weapon : MonoBehaviour {
     }
 
     IEnumerator shoot() {
-        if (enemy != null) {
+        if (enemy == null) {
             enemy = Progression.encounters[Progression.currEnemyRef].GetComponent<Enemy>();
         }
         for (int i = 0; i < numShotsPerSpark * Level; i++) {

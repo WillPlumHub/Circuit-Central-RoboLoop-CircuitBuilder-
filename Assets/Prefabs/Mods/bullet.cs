@@ -30,7 +30,7 @@ public class bullet : MonoBehaviour {
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Robot") {
+        if((player && collision.gameObject.tag == "Enemy") || (!player && collision.gameObject.tag == "Robot")) {
             Destroy(gameObject, hitDespawnTime);
             inMotion = false;
         }
