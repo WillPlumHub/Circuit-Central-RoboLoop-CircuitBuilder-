@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Progression : MonoBehaviour {
@@ -11,6 +12,7 @@ public class Progression : MonoBehaviour {
     [Header("Enemy List")]
     public List<GameObject> encounters = new List<GameObject>();
     public int currEnemyRef = 0;
+    public Vector3 enemyPlace;
 
     [Header("Timer")]
     public float timer = 0;
@@ -26,8 +28,23 @@ public class Progression : MonoBehaviour {
             timer += Time.deltaTime;
         }
 
-        if (encounters[currEnemyRef].GetComponent<Enemy>().health <= 0) {
-            currEnemyRef++;
+        if (!IsListFullOfNull()) { //If list is full of nulls a.k.a all enemies have died
+            if (encounters[currEnemyRef].GetComponent<Enemy>().health <= 0) { //If cur enemy dies
+                Debug.Log("Died");
+                if (currEnemyRef != encounters.Count - 1) { //and its not the last one
+                    Debug.Log("Not the last");
+                    currEnemyRef++;
+                    encounters[currEnemyRef].gameObject.transform.position = enemyPlace;
+                } else { //If it is the last in the list
+                    Debug.Log("End of list");
+                }
+            }
+        } else { //all enemies have died
+            Debug.Log("All enemies have died");
         }
+    }
+
+    public bool IsListFullOfNull() {
+        return encounters != null && encounters.All(item => item == null);
     }
 }

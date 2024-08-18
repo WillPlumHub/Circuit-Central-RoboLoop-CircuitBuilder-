@@ -16,6 +16,7 @@ public class Weapon : MonoBehaviour {
     public string elementalEffect;
     public Enemy enemy;
     public Camera BattleCam;
+    public Progression Progression;
 
     [Header("Shooting")]
     public GameObject projectile;
@@ -50,7 +51,7 @@ public class Weapon : MonoBehaviour {
 
     IEnumerator shoot() {
         if (enemy != null) {
-            enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
+            enemy = Progression.encounters[Progression.currEnemyRef].GetComponent<Enemy>();
         }
         for (int i = 0; i < numShotsPerSpark * Level; i++) {
             yield return new WaitForSeconds(firingRate / Level);
