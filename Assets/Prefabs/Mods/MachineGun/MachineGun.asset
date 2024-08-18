@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e569f9fc76467634b8ec2f4e4853cb6a, type: 3}
-  m_Name: PistolMod
+  m_Name: MachineGun
   m_EditorClassIdentifier: 
   itemName: 
-  slotID: 4
-  overlaySprite: {fileID: -1054978088, guid: ebaf2d7ca4b754b4bbda6ddce8389a0c, type: 3}
-  modifier: {fileID: 1181581144118426735, guid: 9054d0ea78f84124dbf828beda2ca99b, type: 3}
-  amount: 100
+  slotID: 5
+  overlaySprite: {fileID: 21300000, guid: eaada664f9c06b544a0333413b5ef99b, type: 3}
+  modifier: {fileID: 7961367021207375752, guid: 8c0d80184b74eff499c3ce9b24f4061e, type: 3}
+  amount: 414
   dropRate: 100

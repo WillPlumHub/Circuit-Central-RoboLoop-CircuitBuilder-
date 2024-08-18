@@ -40,8 +40,7 @@ public class TilePlacer : MonoBehaviour {
     }
 
     private void HandleMouseClick() {
-        if (Input.GetMouseButtonDown(0))
-        {
+        if (Input.GetMouseButtonDown(0)) {
             Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int gridPos = Tilemap.WorldToCell(worldPos);
 

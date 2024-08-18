@@ -11,4 +11,5 @@ public class Modifier : ScriptableObject {
     public Sprite overlaySprite;
     public GameObject modifier;
     public int amount;
+    public int dropRate;
 }

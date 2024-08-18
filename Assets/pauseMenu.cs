@@ -7,11 +7,13 @@ public class pauseMenu : MonoBehaviour {
 
     #region Variables
     public GameObject Menu;
+    public GameObject OptionMenu;
     public static bool isPaused;
     #endregion
 
     void Start() {
         Menu.SetActive(false);
+        OptionMenu.SetActive(false);
     }
     
     void Update() {
@@ -29,7 +31,6 @@ public class pauseMenu : MonoBehaviour {
         Time.timeScale = 0f;
         AudioListener.pause = true;
         isPaused = true;
-
     }
 
     void UnpauseGame() {
@@ -38,13 +39,30 @@ public class pauseMenu : MonoBehaviour {
         AudioListener.pause = false;
         isPaused = false;
     }
-    /*
-    public void Options() {
-        
-    }*/
+
+    public void OptionEnter() {
+        Menu.SetActive(false);
+        OptionMenu.SetActive(true);
+    }
+
+    public void OptionExit() {
+        Menu.SetActive(true);
+        OptionMenu.SetActive(false);
+    }
 
     public void GoToMainMenu() {
         Time.timeScale = 1f;
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void RAnim() {
+        Menu.GetComponent<Animator>().SetTrigger("TitleHover");
+    }
+    public void LAnim() {
+        Menu.GetComponent<Animator>().SetTrigger("OptionHover");
+    }
+
+    public void IAnim() {
+        Menu.GetComponent<Animator>().SetTrigger("EmptyHover");
     }
 }
