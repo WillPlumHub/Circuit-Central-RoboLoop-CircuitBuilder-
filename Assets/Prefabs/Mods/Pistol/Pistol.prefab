@@ -106,6 +106,7 @@ MonoBehaviour:
   elementalBonus: 1.5
   elementalEffect: 
   enemy: {fileID: 0}
+  BattleCam: {fileID: 0}
   projectile: {fileID: 610069474776579919, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
   spawnPoint: {fileID: 0}
   firingRate: 1
@@ -223,7 +224,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: a90499b3d7ed8774d8394cae84958a9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

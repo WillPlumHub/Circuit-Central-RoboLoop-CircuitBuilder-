@@ -52,7 +52,8 @@ public class Weapon : MonoBehaviour {
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
         for (int i = 0; i < numShotsPerSpark * Level; i++) {
             yield return new WaitForSeconds(firingRate / Level);
-            Debug.Log("Status: " + projectile.name + " " + spawnPoint.position + " " + projectile.transform.rotation);
+            this.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("IsFiring");
+            Debug.Log(projectile.name + " " + spawnPoint.position);
             Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
             if (enemy.element == elementalEffect) {
                 enemy.health -= damage * elementalBonus;
