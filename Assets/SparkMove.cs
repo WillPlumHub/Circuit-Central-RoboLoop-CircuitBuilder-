@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class SparkMove : MonoBehaviour {
 
+    #region Variables
+    [Header("Node List")]
     [SerializeField] public List<Transform> Nodes;
+
+    [Header("Basic Movement")]
     public GameObject Spark;
     public float moveSpeed;
+    public bool moving = true;
+    private int currNodeIndex;
+
+    [Header("Boosting")]
     public float boostMult = 1;
     public float boostAddition = 2;
     public float decrement = 1;
-    private int currNodeIndex;
-
-    public bool moving = true;
-
+    #endregion
 
     void Update() {
         if (Nodes == null || Nodes.Count == 0) {

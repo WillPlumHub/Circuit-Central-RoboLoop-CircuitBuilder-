@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: 
   slotID: 3
   tile: {fileID: 11400000, guid: ed8e879053407c9449406ab9126b78f2, type: 2}
-  amount: 0
+  amount: 100

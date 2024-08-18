@@ -5,13 +5,18 @@ using UnityEngine;
 
 public class InventoryClick : MonoBehaviour {
 
+    #region Variables
+    [Header("Basics")]
     public int slotID;
 
+    [Header("Component References")]
+    SpriteRenderer spriteRenderer;
+    BoxCollider2D boxCol; 
+    
+    [Header("Code References")]
     public TilePlacer tilePlacer;
     public ItemInstance itemInstance;
-
-    SpriteRenderer spriteRenderer;
-    BoxCollider2D boxCol;
+    #endregion
 
     private void Start() {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();

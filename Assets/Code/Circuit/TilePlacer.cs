@@ -5,24 +5,32 @@ using UnityEngine.Tilemaps;
 
 public class TilePlacer : MonoBehaviour {
 
+    #region Variables
+    [Header("Inventory Slot Being Referenced")]
     public int inventory_Item = 1;
     public ItemInstance currItem;
     public Modifier currMod;
-
+    
+    [Header("Tile vs Mod Switch")]
     public bool usingTiles;
 
+    [Header("Click Detection")]
     public Vector2 clickPos; 
     public Vector2 clickGridPos;
-    public Tilemap Tilemap;
 
+    [Header("Script References")]
+    public Tilemap Tilemap; 
     public Inventory inventory;
+    public pauseMenu pauseMenu;
+    #endregion
 
-    
 
     void Update() {
-        HandleMouseClick();
-        HandleKeyboardInput();
-        InventorySelect();
+        if (!pauseMenu.isPaused) {
+            HandleMouseClick();
+            HandleKeyboardInput();
+            InventorySelect();
+        }
     }
 
     private void HandleMouseClick() {

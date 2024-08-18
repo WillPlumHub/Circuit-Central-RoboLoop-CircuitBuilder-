@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
+    #region Variables
+    [Header("Basics")] 
+    public float health = 1;
+    public int Level = 1;
+    public bool levelUp = false;
+
+    [Header("Damage")]
+    public float damage;
     public float elementalBonus = 1.5f;
     public string elementalEffect;
-    public int Level = 1;
-    public float health = 1;
-    public float damage;
+    public Enemy enemy;
+
+    [Header("Shooting")]
     public GameObject projectile;
     public Transform spawnPoint;
-    public Transform stallPoint;
     public float firingRate = 1;
     public float numShotsPerSpark = 5;
-    public Enemy enemy;
+
+    [Header("Spark Stalling")]
+    public Transform stallPoint;
     public bool sparkDelay;
     public float delayTime;
     public GameObject player;
+    #endregion
 
     void Start() {
         player = GameObject.FindWithTag("Player");
@@ -33,14 +43,11 @@ public class Weapon : MonoBehaviour {
         for (int i = 0; i < numShotsPerSpark * Level; i++) {
             yield return new WaitForSeconds(firingRate / Level);
             Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
-
             if (enemy.element == elementalEffect) {
                 enemy.health -= damage * elementalBonus;
             } else {
                 enemy.health -= damage;
             }
-
-            
         }
     }
 
@@ -52,7 +59,12 @@ public class Weapon : MonoBehaviour {
     }
 
     private void Update() {
-        health *= Level;
+        if (levelUp) {
+            health *= Level;
+            Level++;
+            levelUp = false;
+        }
+        
         if (health <= 0) {
             //play destroy anim
             Destroy(gameObject);

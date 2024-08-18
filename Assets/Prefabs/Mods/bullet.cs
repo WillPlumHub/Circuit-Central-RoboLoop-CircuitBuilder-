@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour {
 
+    #region Variables
+    [Header("Basics")]
+    public bool inMotion; 
     public float firingSpeed;
+    
+    [Header("Despawn Times")]
     public float hitDespawnTime;
     public float missDespawnTime;
-    public bool inMotion;
+    #endregion
 
     void Awake() {
         inMotion = true;

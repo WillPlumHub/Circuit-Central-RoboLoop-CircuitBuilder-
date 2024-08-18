@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class InventoryMod : MonoBehaviour {
 
+    #region Variables
+    [Header("Basics")]
     public int slotID;
-
+    
+    [Header("References")]
     public TilePlacer tilePlacer;
     public Modifier modifier;
 
+    [Header("Component References")]
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCol;
+    #endregion
 
     private void Start() {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();

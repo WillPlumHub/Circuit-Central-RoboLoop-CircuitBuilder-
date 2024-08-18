@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    #region Variables
+    [Header("Health")]
+    public float health = 1; 
     public string element;
-    public float health = 1;
+
+    [Header("Drop List")]
     public List<GameObject> drops = new List<GameObject>();
-    public Progression prog;
+
+    [Header("Attacking")]
+    public bool hostile; 
     public float firingRate = 1;
     public GameObject projectile;
     public Transform spawnPoint;
-    public bool hostile;
+    
+    [Header("Script References")]
+    public Progression prog;
+
+    #endregion
 
     void Start() {
         if (hostile) {

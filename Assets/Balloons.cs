@@ -5,20 +5,25 @@ using static UnityEditor.Progress;
 
 public class Balloons : MonoBehaviour {
 
+    #region Variables
+    [Header("Randomizer")]
     public int randomNumber;
     public int lastNumber;
     public int maxAttempts = 10;
 
+    [Header("Movement")]
     public float moveSpeed = 2f;
     public float amplitude = 1f;
     public float frequency = 1f;
-
     private Vector3 startPos;
 
+    [Header("Script References")]
     public Inventory inventory;
-
+    #endregion
+    
     void Start() {
         startPos = transform.position;
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
     }
 
     void Update() {
@@ -51,6 +56,6 @@ public class Balloons : MonoBehaviour {
     private void OnMouseDown() {
         DropItem(NewRandomNumber()); //drop item based on last randomly generated number
         //play pop anim
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
