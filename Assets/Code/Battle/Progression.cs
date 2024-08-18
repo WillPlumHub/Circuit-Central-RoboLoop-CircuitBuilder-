@@ -10,6 +10,7 @@ public class Progression : MonoBehaviour {
 
     [Header("Enemy List")]
     public List<GameObject> encounters = new List<GameObject>();
+    public int currEnemyRef = 0;
 
     [Header("Timer")]
     public float timer = 0;
@@ -23,6 +24,10 @@ public class Progression : MonoBehaviour {
     void Update() {
         if (active) {
             timer += Time.deltaTime;
+        }
+
+        if (encounters[currEnemyRef].GetComponent<Enemy>().health <= 0) {
+            currEnemyRef++;
         }
     }
 }

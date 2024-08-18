@@ -11,39 +11,36 @@ public class Enemy : MonoBehaviour {
     public string element;
 
     [Header("Attacking")]
-    public bool hostile; 
+    public bool hostile;
+    public bool isAttacking;
     public float firingRate = 1;
     public GameObject projectile;
     public Transform spawnPoint;
     
     [Header("Script References")]
     public Progression prog;
-    public Inventory inventory;
+    public RobotStatus status;
     public ItemDrop itemDrop;
     #endregion
 
-    void Start() {
-        if (hostile) {
-            StartCoroutine(attacking());
-        }
-    }
+    void Update() {
 
-    void LateUpdate() {
+        if (hostile && health > 0 && spawnPoint != null && isAttacking) {
+            StartCoroutine(attacking());
+            isAttacking = false;
+        }
+
         if (health <= 0) {
-            //send any flags
-            Debug.Log("HERE");
+            //send any anim flags
             itemDrop.ItemDrops();
-            Debug.Log("Triggered");
             Destroy(gameObject);
         }
     }
 
-
-
     IEnumerator attacking() {
-        while (hostile && health > 0 && spawnPoint != null) {
-            Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
-            yield return new WaitForSeconds(firingRate / prog.difficulty);
-        }
+        status.RoboHealth--;
+        Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
+        yield return new WaitForSeconds(firingRate / prog.difficulty);
+        isAttacking = true;
     }
 }

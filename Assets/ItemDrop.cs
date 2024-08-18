@@ -22,10 +22,6 @@ public class ItemDrop : MonoBehaviour {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
     }
 
-    void EarlyUpdate() {
-
-    }
-
     public List<Modifier> ItemDrops() {
         int randomNumber = Random.Range(0, 101);
         Debug.Log("Numb" + randomNumber);
@@ -67,40 +63,26 @@ public class ItemDrop : MonoBehaviour {
 
     void SpawnDrops(List<Modifier> possibleItems) {
         if (possibleItems != null && possibleItems.Count > 0) {
-            if (dropSpawns.Count != 0)
-            {
-                for (int i = 0; i < Mathf.Min(dropSpawns.Count, possibleItems.Count); i++)
-                {
-                    // Assuming the Modifier should be a GameObject to instantiate
+            if (dropSpawns.Count != 0) {
+                for (int i = 0; i < Mathf.Min(dropSpawns.Count, possibleItems.Count); i++) {
                     GameObject lootDrop = Instantiate(possibleItems[i].modifier, dropSpawns[i].position, Quaternion.identity);
                     SpriteRenderer spriteRenderer = lootDrop.GetComponent<SpriteRenderer>();
-
-                    // Ensure lootDrop has a SpriteRenderer component
-                    if (spriteRenderer != null)
-                    {
+                    if (spriteRenderer != null) {
                         spriteRenderer.sprite = possibleItems[i].overlaySprite;
                     }
-                    else
-                    {
+                    else {
                         Debug.LogWarning("LootDrop GameObject has no SpriteRenderer");
                     }
                 }
             }
-            else
-            {
-                for (int i = 0; i < possibleItems.Count; i++)
-                {
-                    // Assuming the Modifier should be a GameObject to instantiate
+            else {
+                for (int i = 0; i < possibleItems.Count; i++) {
                     GameObject lootDrop = Instantiate(possibleItems[i].modifier, transform.position, Quaternion.identity);
                     SpriteRenderer spriteRenderer = lootDrop.GetComponent<SpriteRenderer>();
-
-                    // Ensure lootDrop has a SpriteRenderer component
-                    if (spriteRenderer != null)
-                    {
+                    if (spriteRenderer != null) {
                         spriteRenderer.sprite = possibleItems[i].overlaySprite;
                     }
-                    else
-                    {
+                    else {
                         Debug.LogWarning("LootDrop GameObject has no SpriteRenderer");
                     }
                 }

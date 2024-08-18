@@ -6,7 +6,8 @@ public class bullet : MonoBehaviour {
 
     #region Variables
     [Header("Basics")]
-    public bool inMotion; 
+    public bool inMotion;
+    public bool player;
     public float firingSpeed;
     
     [Header("Despawn Times")]
@@ -20,12 +21,16 @@ public class bullet : MonoBehaviour {
 
     void Update() {
         if (inMotion) {
-            this.gameObject.transform.Translate(Vector3.right * firingSpeed * Time.deltaTime);
+            if (player) {
+                this.gameObject.transform.Translate(Vector3.right * firingSpeed * Time.deltaTime);
+            } else {
+                this.gameObject.transform.Translate(Vector3.left * firingSpeed * Time.deltaTime);
+            }
         }
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy") {
+        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Robot") {
             Destroy(gameObject, hitDespawnTime);
             inMotion = false;
         }

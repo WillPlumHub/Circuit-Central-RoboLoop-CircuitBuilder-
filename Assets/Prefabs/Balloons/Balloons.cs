@@ -23,14 +23,21 @@ public class Balloons : MonoBehaviour {
     #endregion
     
     void Start() {
-        randomNumber = Random.Range(0, 5);
+        randomNumber = Random.Range(1, 5);
         startPos = transform.position;
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         item = GetComponent<ItemDrop>();
+        SpriteLayerSwap();
     }
 
     void Update() {
         movement();
+    }
+
+    void SpriteLayerSwap() {
+        int rand = Random.Range(0, 1);
+        SpriteRenderer sprite = this.GetComponent<SpriteRenderer>();
+        sprite.sortingOrder = rand;
     }
 
     void movement() {
