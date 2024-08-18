@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour {
     public float elementalBonus = 1.5f;
     public string elementalEffect;
     public Enemy enemy;
+    public Camera BattleCam;
 
     [Header("Shooting")]
     public GameObject projectile;
@@ -29,8 +30,16 @@ public class Weapon : MonoBehaviour {
     public GameObject player;
     #endregion
 
+    public RobotStatus RoboStats;
+
     void Start() {
         player = GameObject.FindWithTag("Player");
+        Camera[] cameras = Camera.allCameras;
+        foreach (Camera camera in cameras) {
+            if (camera.name == "BattleCam") {
+                BattleCam = camera;
+                    }
+                }
     }
     public void OnTriggerEnter2D(Collider2D collision) {
         StartCoroutine(shoot());
@@ -40,8 +49,10 @@ public class Weapon : MonoBehaviour {
     }
 
     IEnumerator shoot() {
+        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Enemy>();
         for (int i = 0; i < numShotsPerSpark * Level; i++) {
             yield return new WaitForSeconds(firingRate / Level);
+            Debug.Log("Status: " + projectile.name + " " + spawnPoint.position + " " + projectile.transform.rotation);
             Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
             if (enemy.element == elementalEffect) {
                 enemy.health -= damage * elementalBonus;
