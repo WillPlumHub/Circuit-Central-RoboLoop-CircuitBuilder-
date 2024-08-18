@@ -18,7 +18,7 @@ public class PowerBar : MonoBehaviour
     private float powerBarMax;
 
 
-    private float interval = .01f;
+    private float interval = .1f;
     private float timer = 0;
 
     // Start is called before the first frame update
