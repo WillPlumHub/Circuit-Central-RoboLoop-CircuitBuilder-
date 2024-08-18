@@ -1,14 +1,19 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
+using UnityEngine.Tilemaps;
+
 
 public class ModifierHandler : MonoBehaviour
 {
     public RobotStatus RoboStats;
+    public Tilemap tilemap;
     void Start()
     {
-        RoboStats = FindObjectOfType<RobotStatus>(); 
+        RoboStats = FindObjectOfType<RobotStatus>();
+        tilemap = GameObject.Find("Temp Tilemap").GetComponent<Tilemap>();
 
     }
     public void SetupMod(GameObject Modifier)
@@ -33,6 +38,41 @@ public class ModifierHandler : MonoBehaviour
                 Modifier.transform.GetChild(0).transform.position = spawnPoint.position;
             }
         }
+        if (ModImage.name == "tiles_0")
+        {
+            Debug.Log("Setting up " + Modifier.name);
+            Vector3Int Location = Vector3Int.FloorToInt(Modifier.gameObject.transform.position);
+            if (!TilePresent(new Vector3Int(Location.x, Location.y - 1, Location.z)))
+            {
+                Modifier.transform.GetChild(0).transform.position = new Vector3(Modifier.transform.position.x, Modifier.transform.position.y - 1);
+                return;
+            }
+            else if (!TilePresent(new Vector3Int(Location.x - 1, Location.y - 1, Location.z)))
+            {
+                Modifier.transform.GetChild(0).transform.position = new Vector3(Modifier.transform.position.x - 1, Modifier.transform.position.y);
+                return;
+            }
+            else if (!TilePresent(new Vector3Int(Location.x, Location.y + 1, Location.z)))
+            {
+                Modifier.transform.GetChild(0).transform.position = new Vector3(Modifier.transform.position.x, Modifier.transform.position.y + 1);
+                return;
+            }
+            else if (!TilePresent(new Vector3Int(Location.x + 1, Location.y, Location.z)))
+            {
+                Modifier.transform.GetChild(0).transform.position = new Vector3(Modifier.transform.position.x + 1, Modifier.transform.position.y);
+                return;
+            }
 
+        }
+    }
+
+    public bool TilePresent(Vector3Int location)
+    {
+        Debug.Log("Checking");
+        if (!tilemap.HasTile(location))
+        {
+            return false;
+        }
+        return true;
     }
 }
