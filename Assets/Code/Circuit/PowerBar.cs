@@ -50,7 +50,7 @@ public class PowerBar : MonoBehaviour
                     powerBarChargeSpeed = UnityEngine.Random.Range(.1F, 1F);
                 }
 
-                Debug.Log(currentSliderValue);
+                //Debug.Log(currentSliderValue);
 
                 if (currentSliderValue < powerBarMax)
                 {
