@@ -60,7 +60,10 @@ public class TilePlacer : MonoBehaviour {
         if (Tilemap.HasTile(gridPos) && currMod.amount > 0 && Tilemap.GetTile(gridPos).name != currMod.name) {
             currMod.amount--;
             inventory.modifiers[inventory_Item - inventory.inventory.Count] = currMod;
-            Instantiate(currMod.modifier, gridPos, Quaternion.identity);
+            GameObject tileOverlay = Instantiate(currMod.modifier, new Vector3(gridPos.x + .5f, gridPos.y + .5f, (float)gridPos.z), Quaternion.identity);
+            tileOverlay.GetComponent<SpriteRenderer>().sprite = currMod.overlaySprite;
+            tileOverlay.GetComponent<SpriteRenderer>().sortingOrder = 3;
+            Debug.Log("Functional");
         }
     }
 
