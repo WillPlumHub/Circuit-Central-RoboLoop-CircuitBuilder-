@@ -16,6 +16,7 @@ public class Balloons : MonoBehaviour {
     public float amplitude = 1f;
     public float frequency = 1f;
     private Vector3 startPos;
+    private bool clicked = false;
 
     [Header("Script References")]
     public Inventory inventory;
@@ -31,7 +32,10 @@ public class Balloons : MonoBehaviour {
     }
 
     void Update() {
-        movement();
+        if (clicked == false)
+        {
+            movement();
+        }
     }
 
     void SpriteLayerSwap() {
@@ -48,7 +52,12 @@ public class Balloons : MonoBehaviour {
 
     private void OnMouseDown() {
         item.ItemDrops();
-        //play pop anim
+        this.gameObject.GetComponent<Animator>().SetBool("ClickedBalloon", true);
+        clicked = true;
+
+    }
+    private void DestroyBalloon()
+    {
         Destroy(gameObject);
     }
 }

@@ -27,7 +27,7 @@ public class ItemDrop : MonoBehaviour {
         Debug.Log("Numb" + randomNumber);
         List<Modifier> possibleItems = new List<Modifier>();
         foreach (Modifier item in drops) {
-            if (randomNumber <= item.dropRate) {
+            if (randomNumber / dropBoost <= item.dropRate) {
                 possibleItems.Add(item);
                 Debug.Log("Item: " + item);
             }
@@ -35,6 +35,7 @@ public class ItemDrop : MonoBehaviour {
         if (possibleItems.Count > 0) {
             CollectDrops(possibleItems);
             SpawnDrops(possibleItems);
+            dropBoost = 1;
             return possibleItems;
         }
         else {
