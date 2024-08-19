@@ -11,8 +11,8 @@ public class Weapon : MonoBehaviour {
     public bool levelUp = false;
 
     [Header("Damage")]
-    public float rawDamage;
-    public int damageDealt;
+    public float rawDamage = 1;
+    public int damageDealt = 1;
     public float elementalBonus = 1.5f;
     public string elementalEffect;
     public Enemy enemy;
