@@ -64,15 +64,14 @@ public class Weapon : MonoBehaviour {
             enemy = Progression.encounters[Progression.currEnemyRef].GetComponent<Enemy>();
         }
         for (int i = 0; i < numShotsPerSpark * Level; i++) {
-            if(Progression.isEnemyDead)
-            {
+            if(Progression.isEnemyDead) {
                 yield break;
             }
             yield return new WaitForSeconds(firingRate / Level);
             this.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("IsFiring");
-            //Debug.Log(projectile.name + " " + spawnPoint.position);
             damageDealt = (int)rawDamage + modifierHandler.DamageBoost;
-            //Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
+
+
             if (enemy.element == elementalEffect) {
                 enemy.health -= damageDealt * elementalBonus;
             } else {
@@ -84,9 +83,6 @@ public class Weapon : MonoBehaviour {
 
     IEnumerator delay() {
         player.GetComponent<SparkMove>().moving = false;
-
-
-        //player.GetComponent<SparkMove>().Spark.transform.position = stallPoint.position;
         if (stallPoint != null) {
             player.transform.position = Vector3.MoveTowards(player.transform.position, stallPoint.position, 2);
         }

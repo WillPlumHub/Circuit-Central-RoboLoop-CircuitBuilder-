@@ -50,6 +50,7 @@ public class Enemy : MonoBehaviour {
             itemDrop.ItemDrops();
             audioManager.PlaySFX(audioManager.EnemyDeath);
             audioManager.PlaySFX(audioManager.Yippee);
+            Debug.Log("DED");
             Destroy(gameObject);
         }
     }
@@ -64,8 +65,7 @@ public class Enemy : MonoBehaviour {
         isAttacking = true;
     }
 
-    public void ProgressionMultiplier()
-    {
+    public void ProgressionMultiplier() {
         health = (float)Mathf.Pow(health * prog.difficulty, 1.2f);
     }
 }

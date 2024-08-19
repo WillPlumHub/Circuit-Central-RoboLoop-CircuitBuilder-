@@ -15,6 +15,13 @@ public class AudioManager : MonoBehaviour {
     public AudioClip BGM_LvL1;
     public AudioClip BGM_LvL2;
     public AudioClip BGM_LvL3;
+    public AudioClip Title_BGM;
+
+    [Header("Guns")]
+    public AudioClip Pistol;
+    public AudioClip MachineGun;
+    public AudioClip Flamethrower;
+
 
     [Header("General SFX")]
     public AudioClip Activate;
@@ -60,7 +67,7 @@ public class AudioManager : MonoBehaviour {
                 musicSource.clip = BGM_LvL3;
             }
         } else {
-            musicSource.clip = BGM_LvL1;
+            musicSource.clip = Title_BGM;
             //musicSource.clip = BGM_LvL2;
             //musicSource.clip = BGM_LvL3;
         }
@@ -86,13 +93,4 @@ public class AudioManager : MonoBehaviour {
     public void PlaySFX(AudioClip clip) {
         SFXSource.PlayOneShot(clip);
     }
-
-    /*
-    AudioManager audioManager;
-      
-    void Awake(){
-        audioManager = GameObject.FindObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
-    audioManager.PlaySFX(audioManager.SFXVARNAME);
-     */
 }
