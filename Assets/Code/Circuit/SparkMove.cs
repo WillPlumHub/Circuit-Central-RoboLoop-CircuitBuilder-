@@ -18,7 +18,9 @@ public class SparkMove : MonoBehaviour {
     public float boostMult = 1;
     public float boostAddition = 2;
     public float decrement = 1;
-    
+
+
+    public float timer;
     AudioManager audioManager;
     #endregion
 
@@ -38,6 +40,13 @@ public class SparkMove : MonoBehaviour {
         } else if (boostMult < 1) {
             boostMult = 1;
         }
+
+        if (Spark.transform.position != Nodes[Nodes.Count - 1].transform.position) {
+            timer += Time.deltaTime;
+        } if (timer >= 1) {
+            audioManager.PlaySFX(audioManager.SparkMoving);
+            timer = 0;
+        }
     }
 
     private void moveTowardsNode() {
@@ -53,6 +62,7 @@ public class SparkMove : MonoBehaviour {
                 Spark.gameObject.SetActive(false);
 
                 if (Input.GetButton("Jump")) {
+                    audioManager.PlaySFX(audioManager.SparkLaunch);
                     Spark.gameObject.SetActive(true);
                     currNodeIndex = 0;
                     boostMult = boostAddition; //Reference boostAddition, that'll effect the starting boost of the spark

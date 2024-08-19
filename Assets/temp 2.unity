@@ -1128,7 +1128,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.8}
+    oldSize: {x: 1.5, y: 2.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2402,7 +2402,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.8}
+    oldSize: {x: 1.5, y: 2.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2824,7 +2824,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.8}
+    oldSize: {x: 1.5, y: 2.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3031,7 +3031,7 @@ MonoBehaviour:
   MenuSelect: {fileID: 8300000, guid: e3a50ac892d1ed644a1d9012912ce764, type: 3}
   SparkLaunch: {fileID: 8300000, guid: 3c76d7774ae8d6a4cafbdebb79c86dd5, type: 3}
   SparkEnd: {fileID: 8300000, guid: 52f69f7139f1ada45933aec4edaf5eb3, type: 3}
-  SparkMoving: {fileID: 0}
+  SparkMoving: {fileID: 8300000, guid: 7dc031482fe5b744f9dd6fdeac285dc7, type: 3}
   SparkDeath: {fileID: 8300000, guid: e068916479e2acb4fbfdf3f096d218db, type: 3}
   RoboiDeath: {fileID: 8300000, guid: b8f1d8f17b4691749a6015fb2f77edaf, type: 3}
   WeaponDeath: {fileID: 8300000, guid: 6a1720d475e2738449161fda97a6492a, type: 3}
@@ -5009,6 +5009,7 @@ MonoBehaviour:
   boostMult: 0
   boostAddition: 3
   decrement: 3
+  timer: 0
 --- !u!114 &1125404066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5179,7 +5180,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.8}
+    oldSize: {x: 1.5, y: 2.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6275,7 +6276,8 @@ MonoBehaviour:
   health: 5
   Level: 1
   levelUp: 0
-  damage: 1
+  rawDamage: 0
+  damageDealt: 0
   elementalBonus: 1.5
   elementalEffect: 
   enemy: {fileID: 0}
@@ -6290,6 +6292,7 @@ MonoBehaviour:
   delayTime: 1
   player: {fileID: 0}
   RoboStats: {fileID: 53089951}
+  modifierHandler: {fileID: 0}
 --- !u!58 &1463555238
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7085,6 +7088,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be2487de9200cd145b0519b1ca9dcd44, type: 3}
+--- !u!1 &1713284552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1713284553}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1713284553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713284552}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5, y: -10.576187, z: -0.41275206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1731946818
 GameObject:
   m_ObjectHideFlags: 0
@@ -8888,3 +8922,4 @@ SceneRoots:
   - {fileID: 246479775}
   - {fileID: 1019095900}
   - {fileID: 600563107}
+  - {fileID: 1713284553}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -17,6 +18,7 @@ public class Balloons : MonoBehaviour {
     public float frequency = 1f;
     private Vector3 startPos;
     private bool clicked = false;
+    public float timer;
 
     [Header("Script References")]
     public Inventory inventory;
@@ -29,7 +31,7 @@ public class Balloons : MonoBehaviour {
     }
 
     void Start() {
-        randomNumber = Random.Range(1, 5);
+        randomNumber = Random.Range(1, 3);
         startPos = transform.position;
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         item = GetComponent<ItemDrop>();
@@ -39,6 +41,16 @@ public class Balloons : MonoBehaviour {
     void Update() {
         if (clicked == false) {
             movement();
+        }
+
+        timer += Time.deltaTime;
+        if (timer >= 0.5) {
+            audioManager.PlaySFX(audioManager.BalloonMove);
+            timer = 0;
+        }
+
+        if (transform.position.x < (-5)) {
+            DestroyBalloon();
         }
     }
 
