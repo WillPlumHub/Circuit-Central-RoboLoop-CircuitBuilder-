@@ -60,6 +60,7 @@ public class pauseMenu : MonoBehaviour {
     }
 
     public void GoToMainMenu() {
+        AudioListener.pause = false;
         SFXPlay();
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenu");
