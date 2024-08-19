@@ -4,7 +4,6 @@ using System.Security.Cryptography;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InventoryMod : MonoBehaviour {
 
@@ -14,16 +13,18 @@ public class InventoryMod : MonoBehaviour {
     
     [Header("References")]
     public TilePlacer tilePlacer;
+    public Inventory inventory;
     public Modifier modifier;
 
     [Header("Component References")]
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCol;
-    public TextMeshPro Text;
+    public TMP_Text Text;
     #endregion
 
     private void Start() {
         tilePlacer = FindObjectOfType<TilePlacer>();
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
         boxCol = gameObject.GetComponent<BoxCollider2D>();
@@ -54,7 +55,7 @@ public class InventoryMod : MonoBehaviour {
     }
 
     void amountUpdate() {
-        Text.text = tilePlacer.inventory_Item.ToString();
+        Text.text = inventory.modifiers[slotID - inventory.inventory.Count].amount.ToString();
     }
 
     private void OnMouseDown() {
