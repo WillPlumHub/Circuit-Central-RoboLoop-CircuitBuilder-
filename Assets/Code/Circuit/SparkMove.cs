@@ -23,7 +23,16 @@ public class SparkMove : MonoBehaviour {
     public float timer;
     AudioManager audioManager;
     #endregion
+    public PowerBar powerBar;
 
+
+    private void Start()
+    {
+        powerBar.powerBarRoutineRunning = false;
+        powerBar.powerBarSlider.gameObject.SetActive(false);
+        powerBar.powerBarPressSpace.gameObject.SetActive(false);
+        powerBar.powerDisplay.gameObject.SetActive(false);
+    }
     void Awake() {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
@@ -61,11 +70,31 @@ public class SparkMove : MonoBehaviour {
                 currNodeIndex = Nodes.Count - 1;
                 Spark.gameObject.SetActive(false);
 
+                //start pb routine
+                powerBar.powerBarRoutineRunning = true;
+                powerBar.powerDisplay.gameObject.SetActive(false);
+                powerBar.powerBarSlider.gameObject.SetActive(true);
+                powerBar.powerBarPressSpace.gameObject.SetActive(true);
+
                 if (Input.GetButton("Jump")) {
+
+                    //stop powerbar
+                    powerBar.powerBarRoutineRunning = false;
+                    powerBar.powerDisplay.gameObject.SetActive(true);
+                    powerBar.powerBarSlider.gameObject.SetActive(false);
+                    powerBar.powerBarPressSpace.gameObject.SetActive(false);
+
+                    //set boost addition
+                    boostAddition = powerBar.powerBarSlider.value;
+
+                    //spark
                     audioManager.PlaySFX(audioManager.SparkLaunch);
                     Spark.gameObject.SetActive(true);
                     currNodeIndex = 0;
                     boostMult = boostAddition; //Reference boostAddition, that'll effect the starting boost of the spark
+
+                    //reset power bar to zero
+                    powerBar.powerBarSlider.value = 0;
                 }
             }
         }

@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using System;
+using TMPro;
+using Unity.VisualScripting;
 
 public class PowerBar : MonoBehaviour
 {
 
     public float powerBarChargeSpeed = .25F;
     public bool powerBarRoutineRunning = true;
-    
 
     public Slider powerBarSlider;
+    public TextMeshProUGUI powerDisplay;
+    public Image powerBarPressSpace;
 
     private float currentSliderValue;
     private float powerBarMin;
@@ -50,14 +53,17 @@ public class PowerBar : MonoBehaviour
                     powerBarChargeSpeed = UnityEngine.Random.Range(.1F, 1F);
                 }
 
-                //Debug.Log(currentSliderValue);
-
                 if (currentSliderValue < powerBarMax)
                 {
                     powerBarSlider.value += powerBarChargeSpeed;
                 }
+
+                currentSliderValue = powerBarSlider.value;
+
+
+                powerDisplay.text = MathF.Round(currentSliderValue).ToString() + "x";
             }
         }
-       
+
     }
 }

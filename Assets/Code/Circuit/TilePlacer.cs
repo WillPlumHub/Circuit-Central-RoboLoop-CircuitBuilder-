@@ -24,6 +24,7 @@ public class TilePlacer : MonoBehaviour {
     public pauseMenu pauseMenu;
     public ModifierHandler modHandler;
     AudioManager audioManager;
+    public PowerBar powerBar;
     #endregion
 
     void Awake() {
@@ -33,6 +34,9 @@ public class TilePlacer : MonoBehaviour {
     void Start() {
         modHandler = FindObjectOfType<ModifierHandler>();
         inventory = FindObjectOfType<Inventory>();
+        powerBar = FindObjectOfType<PowerBar>();
+
+        powerBar.powerDisplay.gameObject.SetActive(false);
     }
 
     void Update() {
@@ -107,6 +111,15 @@ public class TilePlacer : MonoBehaviour {
 
         if (inventory_Item < 0) inventory_Item = 0;
         else if (inventory_Item >= inventory.inventory.Count + inventory.modifiers.Count) inventory_Item = inventory.inventory.Count + inventory.modifiers.Count - 1;
+
+        /*pb event
+        if (Input.GetKeyDown(KeyCode.Space) && powerBar.powerBarRoutineRunning)
+        {
+            powerBar.powerBarRoutineRunning = false;
+            powerBar.powerBarSlider.gameObject.SetActive(false);
+            powerBar.powerBarPressSpace.gameObject.SetActive(false);
+            powerBar.powerDisplay.gameObject.SetActive(true);
+        }*/
     }
 
     public void InventorySelect() {
