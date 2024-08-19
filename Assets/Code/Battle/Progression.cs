@@ -72,10 +72,17 @@ public class Progression : MonoBehaviour {
         }
     }
 
-    public void enemyReload() {
-        if (Vector3.Distance(encounters[currEnemyRef].transform.position, enemyPlace) > 0.01f) {
+    public void enemyReload()
+    {
+        if (Vector3.Distance(encounters[currEnemyRef].transform.position, enemyPlace) > 0.01f)
+        {
             encounters[currEnemyRef].transform.position = Vector3.MoveTowards(encounters[currEnemyRef].transform.position, enemyPlace, moveSpeed * Time.deltaTime);
-        } else { resetEnemy = false; }
+        }
+        else
+        {
+            resetEnemy = false;
+            encounters[currEnemyRef].GetComponent<Enemy>().isAttacking = true;
+        }
     }
 
     public bool IsListFullOfNull() {

@@ -2068,8 +2068,9 @@ GameObject:
   - component: {fileID: 892227870}
   - component: {fileID: 892227869}
   - component: {fileID: 892227872}
+  - component: {fileID: 892227873}
   m_Layer: 0
-  m_Name: SlimeEnemyNeutral-Sheet_1
+  m_Name: SlimeEnemyNeutral
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2210,6 +2211,27 @@ MonoBehaviour:
   prog: {fileID: 1125404066}
   status: {fileID: 0}
   itemDrop: {fileID: 0}
+--- !u!95 &892227873
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892227868}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58927b4f6db7a7541b5a2dd665b83963, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &902998661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1067290151563424564, guid: be2487de9200cd145b0519b1ca9dcd44, type: 3}

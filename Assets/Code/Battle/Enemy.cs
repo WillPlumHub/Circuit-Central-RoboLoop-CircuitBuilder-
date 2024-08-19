@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,9 +12,9 @@ public class Enemy : MonoBehaviour {
     public string element;
 
     [Header("Attacking")]
-    public bool hostile;
+    public bool hostile = true;
     public bool isAttacking;
-    public float firingRate = 1;
+    public float firingRate = 5;
     public GameObject projectile;
     public Transform spawnPoint;
     
@@ -24,6 +25,13 @@ public class Enemy : MonoBehaviour {
 
     AudioManager audioManager;
     #endregion
+
+    void Start()
+    {
+        prog = FindObjectOfType<Progression>();
+        status = FindObjectOfType<RobotStatus>();
+
+    }
 
     void Awake() {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -46,9 +54,11 @@ public class Enemy : MonoBehaviour {
     }
 
     IEnumerator attacking() {
+        GetComponent<Animator>().SetTrigger("IsAttacking");
+        yield return new WaitForSeconds(0.2f);
         audioManager.PlaySFX(audioManager.EnemyShot);
         status.RoboHealth--;
-        //Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
+        Debug.Log("firing");
         yield return new WaitForSeconds(firingRate / prog.difficulty);
         isAttacking = true;
     }
