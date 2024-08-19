@@ -65,6 +65,7 @@ public class ModifierHandler : MonoBehaviour
             if (recipient == "DamageBoost") { toLevel.GetComponent<DamageBoostMechanic>().level++; }
             if (recipient == "DamageMult") { toLevel.GetComponent<DamageMultMechanic>().level++; }
             if (recipient == "SpeedBoost") { toLevel.GetComponent<SpeedBoostMechanic>().level++; }
+            if (recipient == "AirbudTile") { toLevel.GetComponent<Airbud>().level++; }
 
             toLevel.transform.Find("LevelUpAnim").GetComponent<SpriteRenderer>().enabled = true;
             toLevel.transform.Find("LevelUpAnim").GetComponent<Animator>().SetTrigger("LevelUp");

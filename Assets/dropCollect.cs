@@ -19,7 +19,7 @@ public class dropCollect : MonoBehaviour {
     }
 
     void Update() {
-        if (rb == null ) {
+        if (gameObject.GetComponent<Rigidbody2D>() == null ) {
             gameObject.AddComponent<Rigidbody2D>();
             rb = GetComponent<Rigidbody2D>();
         }
