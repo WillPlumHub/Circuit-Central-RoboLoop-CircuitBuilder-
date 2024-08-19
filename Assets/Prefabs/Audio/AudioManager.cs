@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
-    [Header("Audio Source")]
+    #region Variables
+    [Header("Audio Sources")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
 
@@ -14,15 +15,35 @@ public class AudioManager : MonoBehaviour {
     public AudioClip BGM_LvL2;
     public AudioClip BGM_LvL3;
 
-    [Header("SFX")]
-    public AudioClip SparkLaunch;
+    [Header("General SFX")]
     public AudioClip Activate;
-    public AudioClip Shoot;
-    public AudioClip Death;
     public AudioClip Yippee;
+    public AudioClip ItsOver;
+    public AudioClip WeDidIt;
+    public AudioClip Wonderful;
     public AudioClip MenuSelect;
+
+    [Header("Spark SFX")]
+    public AudioClip SparkLaunch;
+    public AudioClip SparkEnd;
+    public AudioClip SparkMoving;
+    public AudioClip SparkDeath;
+
+    [Header("Roboi SFX")]
+    public AudioClip RoboiDeath;
+
+    [Header("Mod SFX")]
+    public AudioClip WeaponDeath;
+    public AudioClip WeaponFiring;
+    public AudioClip ModPlace;
+
+    [Header("Battle SFX")]
     public AudioClip EnemyShot;
     public AudioClip EnemyDeath;
+    public AudioClip CardSelect;
+    public AudioClip BalloonPop;
+    public AudioClip BalloonMove;
+    #endregion
 
     void Start () {
         musicSource.clip = BGM_LvL1;
@@ -39,6 +60,6 @@ public class AudioManager : MonoBehaviour {
     void Awake(){
         audioManager = GameObject.FindObjectWithTag("Audio").GetComponent<AudioManager>();
     }
-    audioManager.PlayeSFX(audioManager.SFXVARNAME);
+    audioManager.PlaySFX(audioManager.SFXVARNAME);
      */
 }

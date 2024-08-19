@@ -3022,14 +3022,25 @@ MonoBehaviour:
   BGM_LvL1: {fileID: 8300000, guid: 5cd9d937d2a47a94ab45c5a90c14d52c, type: 3}
   BGM_LvL2: {fileID: 8300000, guid: 16bc6d7dd7443a744a75da16c7bfb841, type: 3}
   BGM_LvL3: {fileID: 8300000, guid: 0c9758a943ef4d54d80f604af2b92528, type: 3}
-  SparkLaunch: {fileID: 0}
   Activate: {fileID: 0}
-  Shoot: {fileID: 0}
-  Death: {fileID: 0}
   Yippee: {fileID: 8300000, guid: 5cf08817cd1d20e40b546a7e8ab67fbc, type: 3}
+  ItsOver: {fileID: 8300000, guid: 777865f8768c38f4bba7863e88e5d8f6, type: 3}
+  WeDidIt: {fileID: 8300000, guid: 37b956d9e8d5e724593a68cd039e2835, type: 3}
+  Wonderful: {fileID: 8300000, guid: 000c8bcedd2e86b4a93716219a777dc3, type: 3}
   MenuSelect: {fileID: 8300000, guid: e3a50ac892d1ed644a1d9012912ce764, type: 3}
+  SparkLaunch: {fileID: 0}
+  SparkEnd: {fileID: 0}
+  SparkMoving: {fileID: 0}
+  SparkDeath: {fileID: 8300000, guid: 59c51006a09526344bdea6f8686e2198, type: 3}
+  RoboiDeath: {fileID: 8300000, guid: b8f1d8f17b4691749a6015fb2f77edaf, type: 3}
+  WeaponDeath: {fileID: 0}
+  WeaponFiring: {fileID: 0}
+  ModPlace: {fileID: 0}
   EnemyShot: {fileID: 8300000, guid: 51d9d89d3c487e24b9aa05b46514fd96, type: 3}
   EnemyDeath: {fileID: 8300000, guid: 8e5d79dbc2e0fa147ae04d24346e5750, type: 3}
+  CardSelect: {fileID: 0}
+  BalloonPop: {fileID: 0}
+  BalloonMove: {fileID: 0}
 --- !u!4 &852514787
 Transform:
   m_ObjectHideFlags: 0

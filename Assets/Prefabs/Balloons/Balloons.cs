@@ -37,8 +37,7 @@ public class Balloons : MonoBehaviour {
     }
 
     void Update() {
-        if (clicked == false)
-        {
+        if (clicked == false) {
             movement();
         }
     }
@@ -53,6 +52,7 @@ public class Balloons : MonoBehaviour {
         float x = transform.position.x + Time.deltaTime * moveSpeed;
         float y = startPos.y + Mathf.Sin(Time.time * frequency) * amplitude * randomNumber;
         this.transform.position = new Vector3(x, y, startPos.z);
+        audioManager.PlaySFX(audioManager.BalloonMove);
     }
 
     private void OnMouseDown() {
@@ -62,6 +62,7 @@ public class Balloons : MonoBehaviour {
     }
 
     private void DestroyBalloon() {
+        audioManager.PlaySFX(audioManager.BalloonPop);
         Destroy(gameObject);
     }
 }
