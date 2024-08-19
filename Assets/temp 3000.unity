@@ -3187,11 +3187,7 @@ MonoBehaviour:
   BGM_LvL1: {fileID: 8300000, guid: 5cd9d937d2a47a94ab45c5a90c14d52c, type: 3}
   BGM_LvL2: {fileID: 8300000, guid: 16bc6d7dd7443a744a75da16c7bfb841, type: 3}
   BGM_LvL3: {fileID: 8300000, guid: 0c9758a943ef4d54d80f604af2b92528, type: 3}
-<<<<<<< HEAD
   Title_BGM: {fileID: 8300000, guid: dbfe4ea1dd09c4b4aa082f3e648cdf60, type: 3}
-=======
-  Title_BGM: {fileID: 0}
->>>>>>> d06238bb4168be2f6740f041884f9eb2c90f9e29
   Pistol: {fileID: 0}
   MachineGun: {fileID: 0}
   Flamethrower: {fileID: 0}
