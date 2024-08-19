@@ -18,6 +18,7 @@ public class Progression : MonoBehaviour {
     [Header("Battle Reset")]
     public float timeToResetBattle;
     public SparkMove sparkMove;
+    public bool resetEnemy = false;
     
     [Header("Timer")]
     public float timer = 0;
@@ -28,8 +29,9 @@ public class Progression : MonoBehaviour {
         runTime();
         enemyProgression();
 
-        if (encounters[currEnemyRef] != null) {
+        if (resetEnemy) {
             enemyReload();
+            
         }
     }
 
@@ -65,7 +67,7 @@ public class Progression : MonoBehaviour {
     public void enemyReload() {
         if (Vector3.Distance(encounters[currEnemyRef].transform.position, enemyPlace) > 0.01f) {
             encounters[currEnemyRef].transform.position = Vector3.MoveTowards(encounters[currEnemyRef].transform.position, enemyPlace, moveSpeed * Time.deltaTime);
-        }
+        } else { resetEnemy = false; }
     }
 
     public bool IsListFullOfNull() {
@@ -74,6 +76,11 @@ public class Progression : MonoBehaviour {
 
     IEnumerator resetBattle() {
         sparkMove.boostMult = 10;
+
         yield return new WaitForSeconds(timeToResetBattle);
+        Debug.Log("THT");
+
+        resetEnemy = true;
+        Debug.Log("HTH");
     }
 }

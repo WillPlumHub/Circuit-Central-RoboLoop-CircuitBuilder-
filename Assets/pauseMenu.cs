@@ -55,6 +55,10 @@ public class pauseMenu : MonoBehaviour {
         SceneManager.LoadScene("SampleScene");
     }
 
+    public void DAnim() {
+        Menu.GetComponent<Animator>().SetTrigger("ResumeHover");
+    }
+
     public void RAnim() {
         Menu.GetComponent<Animator>().SetTrigger("TitleHover");
     }

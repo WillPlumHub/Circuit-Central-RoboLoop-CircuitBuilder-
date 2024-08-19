@@ -54,10 +54,9 @@ public class Balloons : MonoBehaviour {
         item.ItemDrops();
         this.gameObject.GetComponent<Animator>().SetBool("ClickedBalloon", true);
         clicked = true;
-
     }
-    private void DestroyBalloon()
-    {
+
+    private void DestroyBalloon() {
         Destroy(gameObject);
     }
 }
