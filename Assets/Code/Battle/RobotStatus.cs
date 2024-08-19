@@ -40,4 +40,11 @@ public class RobotStatus : MonoBehaviour {
             return weaponLocation;
         }
     }
+
+    public IEnumerator WalkToBattle(float timeToResetBattle)
+    {
+        GetComponent<Animator>().SetBool("IsWalking", true);
+        yield return new WaitForSeconds(timeToResetBattle);
+        GetComponent<Animator>().SetBool("IsWalking", false);
+    }
 }
