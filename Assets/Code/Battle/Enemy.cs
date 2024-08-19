@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour {
 
     #region Variables
     [Header("Health")]
-    public float health = 1; 
+    public float health = 1;
+    public float damage = 1;
     public string element;
 
     [Header("Attacking")]
@@ -59,7 +60,7 @@ public class Enemy : MonoBehaviour {
         GetComponent<Animator>().SetTrigger("IsAttacking");
         yield return new WaitForSeconds(0.2f);
         audioManager.PlaySFX(audioManager.EnemyShot);
-        status.RoboHealth--;
+        status.RoboHealth -= (int)(damage * prog.difficulty);
         Debug.Log("firing");
         yield return new WaitForSeconds(firingRate / prog.difficulty);
         isAttacking = true;

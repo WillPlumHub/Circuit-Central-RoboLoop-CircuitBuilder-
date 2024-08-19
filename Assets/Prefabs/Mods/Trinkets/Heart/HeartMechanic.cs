@@ -5,11 +5,12 @@ using UnityEngine;
 public class HeartMechanic : MonoBehaviour
 {
     RobotStatus roboStats;
-    public int level = 1;
+    public int level;
     // Start is called before the first frame update
     void Start()
     {
         roboStats = FindObjectOfType<RobotStatus>();
+        level = 1;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

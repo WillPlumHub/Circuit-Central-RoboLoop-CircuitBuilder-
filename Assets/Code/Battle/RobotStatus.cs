@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RobotStatus : MonoBehaviour {
 
@@ -17,6 +18,7 @@ public class RobotStatus : MonoBehaviour {
     [Header("Robo Stats")]
     public int RoboHealth = 10;
     public int RoboMaxHealth = 10;
+    public string sceneToLoad = "StartMenu";
 
     AudioManager audioManager;
     #endregion
@@ -24,7 +26,13 @@ public class RobotStatus : MonoBehaviour {
     void Update() {
         if (RoboHealth <= 0) {
             Debug.Log("GAME OVER BITCHES");
+            GetComponent<Animator>().SetBool("Dead", true);
+            StartCoroutine(OnDeath());
             //send part of that damage to the weapons
+        }
+        if(RoboHealth > RoboMaxHealth)
+        {
+            RoboHealth = RoboMaxHealth;
         }
     }
 
@@ -46,5 +54,16 @@ public class RobotStatus : MonoBehaviour {
         GetComponent<Animator>().SetBool("IsWalking", true);
         yield return new WaitForSeconds(timeToResetBattle);
         GetComponent<Animator>().SetBool("IsWalking", false);
+    }
+
+    public IEnumerator OnDeath()
+    {
+        Weapon[] weapons = FindObjectsOfType<Weapon>();
+        foreach(Weapon weapon in weapons)
+        {
+            Destroy(weapon);
+        }
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
     }
 }

@@ -11,6 +11,10 @@ public class SoupMechanic : MonoBehaviour
     {
         robotStats = FindObjectOfType<RobotStatus>();
     }
+    void Awake()
+    {
+        level = 1;
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
