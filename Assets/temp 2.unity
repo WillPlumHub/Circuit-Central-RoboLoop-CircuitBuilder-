@@ -534,6 +534,7 @@ MonoBehaviour:
   musicSlider: {fileID: 1293997360}
   SFXSlider: {fileID: 504674477}
   myMixer: {fileID: 24100000, guid: bba4dc287a3e8b64e9c527da08f4ae4a, type: 2}
+  audioManager: {fileID: 0}
 --- !u!1 &122264585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,10 +2258,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1473826249}
   m_HandleRect: {fileID: 1520027248}
   m_Direction: 0
-  m_MinValue: 0.0001
-  m_MaxValue: 1
+  m_MinValue: 0
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 0.804
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4986,6 +4987,7 @@ MonoBehaviour:
   ceaseFire: {fileID: 1125404068}
   isEnemyDead: 0
   roboStats: {fileID: 0}
+  ProgChart: {fileID: 0}
   timer: 0
   active: 0
 --- !u!114 &1125404067
@@ -6515,7 +6517,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.8039804
+  m_FillAmount: 0.5
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -6593,7 +6595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -6.2, y: 0}
+  m_AnchoredPosition: {x: -6.199993, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1520027249

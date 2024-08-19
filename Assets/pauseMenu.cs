@@ -36,7 +36,6 @@ public class pauseMenu : MonoBehaviour {
         Menu.SetActive(true);
         SFXPlay();
         Time.timeScale = 0f;
-        AudioListener.pause = true;
         isPaused = true;
     }
 
