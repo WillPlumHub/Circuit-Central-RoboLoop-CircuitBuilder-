@@ -20,6 +20,7 @@ public class Progression : MonoBehaviour {
     public SparkMove sparkMove;
     public bool resetEnemy = false;
     public ceaseFire ceaseFire;
+    public bool isEnemyDead = false;
     
     [Header("Timer")]
     public float timer = 0;
@@ -45,7 +46,7 @@ public class Progression : MonoBehaviour {
         if (!IsListFullOfNull()) { //If list is full of nulls a.k.a all enemies have died
             if (encounters[currEnemyRef].GetComponent<Enemy>().health <= 0) { //If cur enemy dies
                 Debug.Log("Died");
-
+                isEnemyDead = true;
                 StartCoroutine(resetBattle());
 
                 difficulty += 0.4f;
@@ -79,6 +80,7 @@ public class Progression : MonoBehaviour {
         ceaseFire.inBetween = true;
         yield return new WaitForSeconds(timeToResetBattle);
         resetEnemy = true;
+        isEnemyDead = false;
         ceaseFire.inBetween = false;
     }
 

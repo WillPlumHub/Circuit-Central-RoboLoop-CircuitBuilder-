@@ -112,7 +112,7 @@ MonoBehaviour:
   projectile: {fileID: 610069474776579919, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
   spawnPoint: {fileID: 0}
   firingRate: 1
-  numShotsPerSpark: 5
+  numShotsPerSpark: 2
   stallPoint: {fileID: 0}
   sparkDelay: 0
   delayTime: 0
