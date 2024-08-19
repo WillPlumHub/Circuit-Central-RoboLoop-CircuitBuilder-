@@ -221,6 +221,7 @@ GameObject:
   - component: {fileID: 53089950}
   - component: {fileID: 53089949}
   - component: {fileID: 53089951}
+  - component: {fileID: 53089952}
   m_Layer: 0
   m_Name: roboproto 1
   m_TagString: Untagged
@@ -322,6 +323,27 @@ MonoBehaviour:
   - {fileID: 84878055}
   RoboHealth: 23
   RoboMaxHealth: 10
+--- !u!95 &53089952
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53089948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c442a35b5077e9499d8adfe2601e4c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &84878055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1239,7 @@ GameObject:
   - component: {fileID: 372484927}
   - component: {fileID: 372484929}
   - component: {fileID: 372484930}
+  - component: {fileID: 372484931}
   m_Layer: 0
   m_Name: Spark
   m_TagString: Spark
@@ -1265,7 +1288,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 19
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 1632981590, guid: 8fc014a23b15fc54abb603c7093ebd45, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1353,6 +1376,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &372484931
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372484926}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e19b3ac438f70ae4cb45cc4711fb9aa1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &374534663
 GameObject:
   m_ObjectHideFlags: 0
@@ -3328,6 +3372,8 @@ MonoBehaviour:
   sparkMove: {fileID: 0}
   resetEnemy: 0
   ceaseFire: {fileID: 0}
+  isEnemyDead: 0
+  roboStats: {fileID: 0}
   timer: 0
   active: 0
 --- !u!114 &1125404067

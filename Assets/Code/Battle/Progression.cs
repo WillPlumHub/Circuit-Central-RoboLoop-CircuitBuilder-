@@ -21,12 +21,19 @@ public class Progression : MonoBehaviour {
     public bool resetEnemy = false;
     public ceaseFire ceaseFire;
     public bool isEnemyDead = false;
+    public RobotStatus roboStats;
     
     [Header("Timer")]
     public float timer = 0;
     public bool active;
     #endregion
 
+    void Start()
+    {
+        sparkMove = FindObjectOfType<SparkMove>();
+        ceaseFire = FindObjectOfType<ceaseFire>();
+        roboStats = FindObjectOfType<RobotStatus>();
+    }
     void Update() {
         runTime();
         enemyProgression();
@@ -78,6 +85,7 @@ public class Progression : MonoBehaviour {
     IEnumerator resetBattle() {
         sparkMove.boostMult = 10;
         ceaseFire.inBetween = true;
+        StartCoroutine(roboStats.WalkToBattle(timeToResetBattle));
         yield return new WaitForSeconds(timeToResetBattle);
         resetEnemy = true;
         isEnemyDead = false;
