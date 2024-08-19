@@ -11,7 +11,8 @@ public class Weapon : MonoBehaviour {
     public bool levelUp = false;
 
     [Header("Damage")]
-    public float damage;
+    public float rawDamage;
+    public int damageDealt;
     public float elementalBonus = 1.5f;
     public string elementalEffect;
     public Enemy enemy;
@@ -32,9 +33,11 @@ public class Weapon : MonoBehaviour {
     #endregion
 
     public RobotStatus RoboStats;
+    public ModifierHandler modifierHandler;
 
     void Start() {
         player = GameObject.FindWithTag("Player");
+        modifierHandler = FindObjectOfType<ModifierHandler>();
         Progression = player.GetComponent<Progression>();
         Camera[] cameras = Camera.allCameras;
         foreach (Camera camera in cameras) {
@@ -59,11 +62,13 @@ public class Weapon : MonoBehaviour {
             this.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("IsFiring");
             Debug.Log(projectile.name + " " + spawnPoint.position);
             Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
+            damageDealt = (int)rawDamage + modifierHandler.DamageBoost;
             if (enemy.element == elementalEffect) {
-                enemy.health -= damage * elementalBonus;
+                enemy.health -= damageDealt * elementalBonus;
             } else {
-                enemy.health -= damage;
+                enemy.health -= damageDealt;
             }
+            modifierHandler.DamageBoost = 0;
         }
     }
 
