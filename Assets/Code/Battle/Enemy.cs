@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour {
     {
         prog = FindObjectOfType<Progression>();
         status = FindObjectOfType<RobotStatus>();
+        itemDrop = this.gameObject.GetComponent<ItemDrop>();
 
     }
 

@@ -86,7 +86,8 @@ public class ItemDrop : MonoBehaviour {
                     GameObject lootDrop = Instantiate(possibleItems[i].modifier, transform.position, Quaternion.identity);
                     SpriteRenderer spriteRenderer = lootDrop.GetComponent<SpriteRenderer>();
                     if (spriteRenderer != null) {
-                        spriteRenderer.sprite = possibleItems[i].overlaySprite;
+
+                        spriteRenderer.enabled = false;
                     }
                     else {
                         Debug.LogWarning("LootDrop GameObject has no SpriteRenderer");
