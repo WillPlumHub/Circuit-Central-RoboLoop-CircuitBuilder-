@@ -5,6 +5,8 @@ using UnityEngine;
 public class ItemDrop : MonoBehaviour {
 
     #region Variables
+    public GameObject lootDrop;
+
     [Header("Drop List")]
     public List<Modifier> drops = new List<Modifier>();
 
@@ -71,7 +73,9 @@ public class ItemDrop : MonoBehaviour {
         if (possibleItems != null && possibleItems.Count > 0) {
             if (dropSpawns.Count != 0) {
                 for (int i = 0; i < Mathf.Min(dropSpawns.Count, possibleItems.Count); i++) {
-                    GameObject lootDrop = Instantiate(possibleItems[i].modifier, dropSpawns[i].position, Quaternion.identity);
+                    lootDrop = Instantiate(possibleItems[i].modifier, dropSpawns[i].position, Quaternion.identity);
+                    lootDrop.AddComponent<dropCollect>();
+                    lootDrop.transform.GetChild(0).gameObject.AddComponent<dropCollect>();
                     SpriteRenderer spriteRenderer = lootDrop.GetComponent<SpriteRenderer>();
                     if (spriteRenderer != null) {
                         spriteRenderer.sprite = possibleItems[i].overlaySprite;
@@ -83,7 +87,8 @@ public class ItemDrop : MonoBehaviour {
             }
             else {
                 for (int i = 0; i < possibleItems.Count; i++) {
-                    GameObject lootDrop = Instantiate(possibleItems[i].modifier, transform.position, Quaternion.identity);
+                    lootDrop = Instantiate(possibleItems[i].modifier, transform.position, Quaternion.identity);
+                    lootDrop.AddComponent<dropCollect>();
                     SpriteRenderer spriteRenderer = lootDrop.GetComponent<SpriteRenderer>();
                     if (spriteRenderer != null) {
 
