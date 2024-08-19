@@ -21,8 +21,13 @@ public class Balloons : MonoBehaviour {
     [Header("Script References")]
     public Inventory inventory;
     public ItemDrop item;
+    AudioManager audioManager;
     #endregion
-    
+
+    void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start() {
         randomNumber = Random.Range(1, 5);
         startPos = transform.position;
@@ -39,7 +44,7 @@ public class Balloons : MonoBehaviour {
     }
 
     void SpriteLayerSwap() {
-        int rand = Random.Range(0, 1);
+        int rand = Random.Range(4, 9);
         SpriteRenderer sprite = this.GetComponent<SpriteRenderer>();
         sprite.sortingOrder = rand;
     }
@@ -51,8 +56,8 @@ public class Balloons : MonoBehaviour {
     }
 
     private void OnMouseDown() {
-        item.ItemDrops();
         this.gameObject.GetComponent<Animator>().SetBool("ClickedBalloon", true);
+        item.ItemDrops();
         clicked = true;
     }
 

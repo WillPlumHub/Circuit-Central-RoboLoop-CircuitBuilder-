@@ -19,10 +19,26 @@ public class AudioManager : MonoBehaviour {
     public AudioClip Activate;
     public AudioClip Shoot;
     public AudioClip Death;
+    public AudioClip Yippee;
+    public AudioClip MenuSelect;
+    public AudioClip EnemyShot;
+    public AudioClip EnemyDeath;
 
     void Start () {
         musicSource.clip = BGM_LvL1;
         musicSource.Play();
     }
 
+    public void PlaySFX(AudioClip clip) {
+        SFXSource.PlayOneShot(clip);
+    }
+
+    /*
+    AudioManager audioManager;
+      
+    void Awake(){
+        audioManager = GameObject.FindObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+    audioManager.PlayeSFX(audioManager.SFXVARNAME);
+     */
 }

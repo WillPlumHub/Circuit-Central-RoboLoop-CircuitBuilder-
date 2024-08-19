@@ -17,6 +17,8 @@ public class RobotStatus : MonoBehaviour {
     [Header("Robo Stats")]
     public int RoboHealth = 10;
     public int RoboMaxHealth = 10;
+
+    AudioManager audioManager;
     #endregion
 
     void Update() {

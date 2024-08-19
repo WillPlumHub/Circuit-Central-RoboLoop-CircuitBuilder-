@@ -18,7 +18,13 @@ public class SparkMove : MonoBehaviour {
     public float boostMult = 1;
     public float boostAddition = 2;
     public float decrement = 1;
+    
+    AudioManager audioManager;
     #endregion
+
+    void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Update() {
         if (Nodes == null || Nodes.Count == 0) {

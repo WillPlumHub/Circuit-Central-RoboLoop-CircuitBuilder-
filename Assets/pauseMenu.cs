@@ -9,7 +9,12 @@ public class pauseMenu : MonoBehaviour {
     public GameObject Menu;
     public GameObject OptionMenu;
     public static bool isPaused;
+    AudioManager audioManager;
     #endregion
+
+    void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start() {
         Menu.SetActive(false);
@@ -19,6 +24,7 @@ public class pauseMenu : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (isPaused) {
+                OptionExit();
                 UnpauseGame();
             } else {
                 PauseGame();
@@ -28,6 +34,7 @@ public class pauseMenu : MonoBehaviour {
 
     void PauseGame() {
         Menu.SetActive(true);
+        SFXPlay();
         Time.timeScale = 0f;
         AudioListener.pause = true;
         isPaused = true;
@@ -35,6 +42,7 @@ public class pauseMenu : MonoBehaviour {
 
     public void UnpauseGame() {
         Menu.SetActive(false);
+        SFXPlay();
         Time.timeScale = 1f;
         AudioListener.pause = false;
         isPaused = false;
@@ -42,15 +50,18 @@ public class pauseMenu : MonoBehaviour {
 
     public void OptionEnter() {
         Menu.SetActive(false);
+        SFXPlay();
         OptionMenu.SetActive(true);
     }
 
     public void OptionExit() {
         Menu.SetActive(true);
+        SFXPlay();
         OptionMenu.SetActive(false);
     }
 
     public void GoToMainMenu() {
+        SFXPlay();
         Time.timeScale = 1f;
         SceneManager.LoadScene("SampleScene");
     }
@@ -68,5 +79,9 @@ public class pauseMenu : MonoBehaviour {
 
     public void IAnim() {
         Menu.GetComponent<Animator>().SetTrigger("EmptyHover");
+    }
+
+    public void SFXPlay() {
+        audioManager.PlaySFX(audioManager.MenuSelect);
     }
 }

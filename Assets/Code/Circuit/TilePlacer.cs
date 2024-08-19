@@ -23,11 +23,14 @@ public class TilePlacer : MonoBehaviour {
     public Inventory inventory;
     public pauseMenu pauseMenu;
     public ModifierHandler modHandler;
-
+    AudioManager audioManager;
     #endregion
 
-    void Start()
-    {
+    void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+    void Start() {
         modHandler = FindObjectOfType<ModifierHandler>();
     }
 

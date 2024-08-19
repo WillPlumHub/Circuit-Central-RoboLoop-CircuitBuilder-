@@ -29,9 +29,15 @@ public class Weapon : MonoBehaviour {
     public bool sparkDelay;
     public float delayTime;
     public GameObject player;
+
+    [Header("References")]
+    public RobotStatus RoboStats;
+    AudioManager audioManager;
     #endregion
 
-    public RobotStatus RoboStats;
+    void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start() {
         player = GameObject.FindWithTag("Player");
@@ -58,7 +64,7 @@ public class Weapon : MonoBehaviour {
             yield return new WaitForSeconds(firingRate / Level);
             this.gameObject.transform.GetChild(0).GetComponent<Animator>().SetTrigger("IsFiring");
             Debug.Log(projectile.name + " " + spawnPoint.position);
-            Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
+            //Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
             if (enemy.element == elementalEffect) {
                 enemy.health -= damage * elementalBonus;
             } else {

@@ -16,7 +16,12 @@ public class ItemDrop : MonoBehaviour {
 
     [Header("Script References")]
     public Inventory inventory;
+    AudioManager audioManager;
     #endregion
+
+    void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start() {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();

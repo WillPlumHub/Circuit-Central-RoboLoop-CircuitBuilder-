@@ -21,7 +21,13 @@ public class Enemy : MonoBehaviour {
     public Progression prog;
     public RobotStatus status;
     public ItemDrop itemDrop;
+
+    AudioManager audioManager;
     #endregion
+
+    void Awake() {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Update() {
 
@@ -33,13 +39,16 @@ public class Enemy : MonoBehaviour {
         if (health <= 0) {
             //send any anim flags
             itemDrop.ItemDrops();
+            audioManager.PlaySFX(audioManager.EnemyDeath);
+            audioManager.PlaySFX(audioManager.Yippee);
             Destroy(gameObject);
         }
     }
 
     IEnumerator attacking() {
+        audioManager.PlaySFX(audioManager.EnemyShot);
         status.RoboHealth--;
-        Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
+        //Instantiate(projectile, spawnPoint.position, projectile.transform.rotation);
         yield return new WaitForSeconds(firingRate / prog.difficulty);
         isAttacking = true;
     }
