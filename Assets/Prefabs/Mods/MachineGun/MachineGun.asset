@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   slotID: 5
-  overlaySprite: {fileID: 21300000, guid: eaada664f9c06b544a0333413b5ef99b, type: 3}
-  modifier: {fileID: 7961367021207375752, guid: 8c0d80184b74eff499c3ce9b24f4061e, type: 3}
-  amount: 414
+  overlaySprite: {fileID: -866439304, guid: 6dda8d139dfac9e479213fff04391daf, type: 3}
+  modifier: {fileID: 6796974753580595886, guid: d44c38fdfa54c9f4a802501b3da4ed91, type: 3}
+  amount: 416
   dropRate: 100

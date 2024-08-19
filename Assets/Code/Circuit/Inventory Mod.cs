@@ -18,6 +18,7 @@ public class InventoryMod : MonoBehaviour {
     #endregion
 
     private void Start() {
+        tilePlacer = FindObjectOfType<TilePlacer>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
         boxCol = gameObject.GetComponent<BoxCollider2D>();
