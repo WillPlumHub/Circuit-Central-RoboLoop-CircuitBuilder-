@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1626540065306215343, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.499943
+      value: -23.9666
       objectReference: {fileID: 0}
     - target: {fileID: 1626540065306215343, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.544188
+      value: -9.707729
       objectReference: {fileID: 0}
     - target: {fileID: 1626540065306215343, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.009340858
       objectReference: {fileID: 0}
     - target: {fileID: 1626540065306215343, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626540065306215343, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1626540065306215343, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1626540065306215343, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1626540065306215343, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -52,6 +52,30 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: be860ad4ac4d338418c79c3e6dd144b4, type: 3}
+    - target: {fileID: 5317386477913308524, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1610792265, guid: ebaf2d7ca4b754b4bbda6ddce8389a0c, type: 3}
+    - target: {fileID: 5317386477913308524, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317386477913308524, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6292343129038531365, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.407
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515319059058689478, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      propertyPath: slotID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8515319059058689478, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      propertyPath: modifier
+      value: 
+      objectReference: {fileID: 11400000, guid: de77c0a1ffbddb3448503260ec7da00a, type: 2}
     - target: {fileID: 8595022369141951516, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: m_Name
       value: BoostCard Variant
@@ -59,5 +83,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8595022369141951516, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 662324161038376623}
   m_SourcePrefab: {fileID: 100100000, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+--- !u!1 &8097532803026726366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8595022369141951516, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+  m_PrefabInstance: {fileID: 515539428178207170}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &662324161038376623
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8097532803026726366}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0576a99b91193614b967a15b1c59ed7c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -75,7 +75,9 @@ public class ItemDrop : MonoBehaviour {
                 for (int i = 0; i < Mathf.Min(dropSpawns.Count, possibleItems.Count); i++) {
                     lootDrop = Instantiate(possibleItems[i].modifier, dropSpawns[i].position, Quaternion.identity);
                     lootDrop.AddComponent<dropCollect>();
+                    lootDrop.AddComponent<Rigidbody2D>();
                     lootDrop.transform.GetChild(0).gameObject.AddComponent<dropCollect>();
+                    lootDrop.transform.GetChild(0).gameObject.AddComponent<Rigidbody2D>();
                     SpriteRenderer spriteRenderer = lootDrop.GetComponent<SpriteRenderer>();
                     if (spriteRenderer != null) {
                         spriteRenderer.sprite = possibleItems[i].overlaySprite;
@@ -89,9 +91,11 @@ public class ItemDrop : MonoBehaviour {
                 for (int i = 0; i < possibleItems.Count; i++) {
                     lootDrop = Instantiate(possibleItems[i].modifier, transform.position, Quaternion.identity);
                     lootDrop.AddComponent<dropCollect>();
+                    lootDrop.AddComponent<Rigidbody2D>();
+                    lootDrop.transform.GetChild(0).gameObject.AddComponent<dropCollect>();
+                    lootDrop.transform.GetChild(0).gameObject.AddComponent<Rigidbody2D>();
                     SpriteRenderer spriteRenderer = lootDrop.GetComponent<SpriteRenderer>();
                     if (spriteRenderer != null) {
-
                         spriteRenderer.enabled = false;
                     }
                     else {
