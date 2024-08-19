@@ -538,6 +538,7 @@ MonoBehaviour:
   musicSlider: {fileID: 1293997360}
   SFXSlider: {fileID: 504674477}
   myMixer: {fileID: 24100000, guid: bba4dc287a3e8b64e9c527da08f4ae4a, type: 2}
+<<<<<<< HEAD
 --- !u!1 &118047649
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +673,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118047649}
   m_CullTransparentMesh: 1
+=======
+  audioManager: {fileID: 0}
+>>>>>>> d06238bb4168be2f6740f041884f9eb2c90f9e29
 --- !u!1 &122264585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,10 +2685,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 1473826249}
   m_HandleRect: {fileID: 1520027248}
   m_Direction: 0
-  m_MinValue: 0.0001
-  m_MaxValue: 1
+  m_MinValue: 0
+  m_MaxValue: 10
   m_WholeNumbers: 0
+<<<<<<< HEAD
   m_Value: 0.2
+=======
+  m_Value: 5
+>>>>>>> d06238bb4168be2f6740f041884f9eb2c90f9e29
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -7417,7 +7425,11 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
+<<<<<<< HEAD
   m_FillAmount: 0.19992
+=======
+  m_FillAmount: 0.5
+>>>>>>> d06238bb4168be2f6740f041884f9eb2c90f9e29
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -7493,9 +7505,15 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2107415458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
   m_AnchorMin: {x: 0.19992, y: 0}
   m_AnchorMax: {x: 0.19992, y: 1}
   m_AnchoredPosition: {x: -6.2, y: 0}
+=======
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -6.199993, y: 0}
+>>>>>>> d06238bb4168be2f6740f041884f9eb2c90f9e29
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1520027249

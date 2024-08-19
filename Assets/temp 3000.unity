@@ -310,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 40902448}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: -0.1, z: 0}
+  m_LocalPosition: {x: -0.7, y: -0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -554,6 +554,7 @@ MonoBehaviour:
   musicSlider: {fileID: 1293997360}
   SFXSlider: {fileID: 504674477}
   myMixer: {fileID: 24100000, guid: bba4dc287a3e8b64e9c527da08f4ae4a, type: 2}
+  audioManager: {fileID: 0}
 --- !u!1 &122264585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1690,7 +1691,7 @@ Transform:
   m_GameObject: {fileID: 380353632}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1765,7 +1766,7 @@ Transform:
   m_GameObject: {fileID: 421411162}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0.8, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1971,6 +1972,7 @@ MonoBehaviour:
   - {fileID: 40902448}
   RoboHealth: 23
   RoboMaxHealth: 10
+  sceneToLoad: StartMenu
 --- !u!212 &462765273
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3185,7 +3187,11 @@ MonoBehaviour:
   BGM_LvL1: {fileID: 8300000, guid: 5cd9d937d2a47a94ab45c5a90c14d52c, type: 3}
   BGM_LvL2: {fileID: 8300000, guid: 16bc6d7dd7443a744a75da16c7bfb841, type: 3}
   BGM_LvL3: {fileID: 8300000, guid: 0c9758a943ef4d54d80f604af2b92528, type: 3}
+<<<<<<< HEAD
   Title_BGM: {fileID: 8300000, guid: dbfe4ea1dd09c4b4aa082f3e648cdf60, type: 3}
+=======
+  Title_BGM: {fileID: 0}
+>>>>>>> d06238bb4168be2f6740f041884f9eb2c90f9e29
   Pistol: {fileID: 0}
   MachineGun: {fileID: 0}
   Flamethrower: {fileID: 0}
@@ -5187,7 +5193,7 @@ Transform:
   m_GameObject: {fileID: 1278559259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 0.4, z: 0}
+  m_LocalPosition: {x: -0.6, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

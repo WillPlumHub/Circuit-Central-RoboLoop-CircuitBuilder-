@@ -9,6 +9,13 @@ public class VolumeSettings : MonoBehaviour {
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider SFXSlider;
     [SerializeField] private AudioMixer myMixer;
+    [SerializeField] private AudioManager audioManager;
+
+
+    void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start() {
         if (PlayerPrefs.HasKey("musicVolume") || PlayerPrefs.HasKey("SFXVolume")) {
@@ -26,9 +33,11 @@ public class VolumeSettings : MonoBehaviour {
     }
 
     public void SetSFXVolume() {
-        float volume = SFXSlider.value;
+        float volume = (SFXSlider.value / 10);
+
         myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
         PlayerPrefs.SetFloat("SFXVolume", volume);
+        audioManager.PlaySFX(audioManager.MenuSelect);
     }
 
     private void loadVolume() {

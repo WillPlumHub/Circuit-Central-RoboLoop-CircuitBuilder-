@@ -74,14 +74,14 @@ public class TilePlacer : MonoBehaviour {
             RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             foreach(RaycastHit2D hit in hits)
             {
-                if(hit.transform.gameObject.GetComponent<BoxCollider2D>() || hit.transform.gameObject.GetComponent<BoxCollider2D>())
+                if(hit.transform.gameObject.GetComponent<BoxCollider2D>() || hit.transform.gameObject.GetComponent<CircleCollider2D>())
                 {
                     string strippedRay = hit.transform.gameObject.name.Replace("(Clone)", "");
                     string strippedMod = currMod.modifier.name.Replace("(Clone)", "");
                     Debug.Log(" status: " + strippedRay + " " + strippedMod);
                     if (strippedRay == currMod.modifier.name)
                     {
-                        modHandler.LevelUpModifier(currMod.modifier);
+                        modHandler.LevelUpModifier(hit.transform.gameObject);
                         return;
                     }
                     else

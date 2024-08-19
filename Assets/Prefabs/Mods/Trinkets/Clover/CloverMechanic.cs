@@ -5,10 +5,11 @@ using UnityEngine;
 public class CloverMechanic : MonoBehaviour
 {
     Progression progression;
-    public int level = 1;
-    void Start()
+    public int level;
+    void Awake()
     {
         progression = FindObjectOfType<Progression>();
+        level = 1;
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
