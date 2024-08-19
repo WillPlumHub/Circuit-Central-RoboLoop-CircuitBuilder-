@@ -13,9 +13,7 @@ public class ceaseFire : MonoBehaviour {
         List<Weapon> objectsInScene = new List<Weapon>();
 
         foreach (Weapon go in Resources.FindObjectsOfTypeAll<Weapon>()) {
-            if (!EditorUtility.IsPersistent(go.transform.root.gameObject) && !(go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave)) {
                 objectsInScene.Add(go);
-            }
         }
         return objectsInScene.ToArray();
     }
