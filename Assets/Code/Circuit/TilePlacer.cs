@@ -32,6 +32,7 @@ public class TilePlacer : MonoBehaviour {
 
     void Start() {
         modHandler = FindObjectOfType<ModifierHandler>();
+        inventory = FindObjectOfType<Inventory>();
     }
 
     void Update() {

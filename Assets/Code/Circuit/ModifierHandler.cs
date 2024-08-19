@@ -23,7 +23,6 @@ public class ModifierHandler : MonoBehaviour
         if (ModImage.name == "Modifiers_5")
         {
             Debug.Log("Setting up " + Modifier.name);
-            Modifier.AddComponent<Weapon>();
             Weapon ModWeapon = Modifier.GetComponent<Weapon>();
             if (ModWeapon.Level > 1) //If we're combining two of the same weapon
             {
@@ -39,11 +38,19 @@ public class ModifierHandler : MonoBehaviour
                 Modifier.transform.GetChild(0).transform.position = spawnPoint.position;
             }
         }
-        if (ModImage.name == "tiles_0")
+        /*if (ModImage.name == "Modifiers_5")
         {
+            Debug.Log("Setting up " + Modifier.name);
+            Weapon ModWeapon = Modifier.GetComponent<Weapon>();
+            if(ModWeapon.Level > 1)
+            {
+                ModWeapon.Level +=
+            }
+            else
+            {
 
-
-        }
+            }
+        }*/
     }
 
     public bool TilePresent(Vector3Int location)

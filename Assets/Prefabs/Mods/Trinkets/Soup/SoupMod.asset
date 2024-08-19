@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   slotID: 0
-  overlaySprite: {fileID: 0}
-  modifier: {fileID: 0}
-  amount: 0
-  dropRate: 0
+  overlaySprite: {fileID: -1132883914, guid: 6dda8d139dfac9e479213fff04391daf, type: 3}
+  modifier: {fileID: 1649887106696950063, guid: 056ab628c76a87c4bbf6145d12e4e0d1, type: 3}
+  amount: 23
+  dropRate: 30

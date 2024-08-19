@@ -11,6 +11,6 @@ public class CloverMechanic : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        progression.encounters[progression.currEnemyRef].GetComponent<ItemDrop>().dropBoost +=0.05f;
+        progression.encounters[progression.currEnemyRef].GetComponent<ItemDrop>().dropBoost += 0.05f;
     }
 }
