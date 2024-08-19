@@ -5,6 +5,7 @@ using UnityEngine;
 public class HeartMechanic : MonoBehaviour
 {
     RobotStatus roboStats;
+    public int level = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,6 @@ public class HeartMechanic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        roboStats.RoboMaxHealth++;
+        roboStats.RoboMaxHealth += 1 + (2 * (level - 1));
     }
 }

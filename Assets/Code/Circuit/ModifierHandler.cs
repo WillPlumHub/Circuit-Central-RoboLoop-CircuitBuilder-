@@ -56,7 +56,17 @@ public class ModifierHandler : MonoBehaviour
         }
         else
         {
-            toLevel.GetComponent<CloverMechanic>().level++;
+            string recipient = toLevel.name.Replace("(Clone)", "");
+            Debug.Log("Recipient: " + recipient);
+            if (recipient == "Clover"){ toLevel.GetComponent<CloverMechanic>().level++; }
+            if (recipient == "Heart") { toLevel.GetComponent<HeartMechanic>().level++; }
+            if (recipient == "Soup") { toLevel.GetComponent<SoupMechanic>().level++; }
+            if (recipient == "DamageBoost") { toLevel.GetComponent<DamageBoostMechanic>().level++; }
+            if (recipient == "DamageMult") { toLevel.GetComponent<DamageMultMechanic>().level++; }
+            if (recipient == "SpeedBoost") { toLevel.GetComponent<SpeedBoostMechanic>().level++; }
+
+
+
         }
     }
 }

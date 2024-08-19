@@ -167,7 +167,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -19.786617, y: -4.0833864, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6515875156535998391}
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 25
   element: Ice
-  hostile: 0
+  hostile: 1
   isAttacking: 0
   firingRate: 1
   projectile: {fileID: 610069474776579919, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220beac5384774444b05514058ccb62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lootDrop: {fileID: 0}
   drops:
   - {fileID: 11400000, guid: de77c0a1ffbddb3448503260ec7da00a, type: 2}
   - {fileID: 11400000, guid: ff2bd007960676e4989560061fd7092f, type: 2}

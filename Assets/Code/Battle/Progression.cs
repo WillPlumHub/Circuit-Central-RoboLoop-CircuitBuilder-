@@ -27,7 +27,10 @@ public class Progression : MonoBehaviour {
     public ceaseFire ceaseFire;
     public bool isEnemyDead = false;
     public RobotStatus roboStats;
-    
+
+    [Header("ProgressionChart Interaction")]
+    public ProgressionChart ProgChart;
+
     [Header("Timer")]
     public float timer = 0;
     public bool active;
@@ -38,6 +41,7 @@ public class Progression : MonoBehaviour {
         sparkMove = FindObjectOfType<SparkMove>();
         ceaseFire = FindObjectOfType<ceaseFire>();
         roboStats = FindObjectOfType<RobotStatus>();
+        ProgChart = FindObjectOfType<ProgressionChart>();
     }
     void Update() {
         runTime();
@@ -45,6 +49,7 @@ public class Progression : MonoBehaviour {
 
         if (resetEnemy) {
             enemyReload();
+            ProgChart.isMoving = true;
         }
     }
 
@@ -59,7 +64,9 @@ public class Progression : MonoBehaviour {
             if (encounters[currEnemyRef].GetComponent<Enemy>().health <= 0) { //If cur enemy dies
                 Debug.Log("Died");
                 isEnemyDead = true;
+                encounters[currEnemyRef] = null;
                 StartCoroutine(resetBattle());
+                ProgChart.RemoveEnemy();
 
                 difficulty += 0.2f;
                 Debug.Log("Encounters length " + encounters.Count);
@@ -70,6 +77,7 @@ public class Progression : MonoBehaviour {
                 }
                 GameObject newLastEnemy = summonEnemy();
                 encounters[4] = newLastEnemy;
+                ProgChart.AddEnemy(newLastEnemy);
 
                 /*
                                 if (currEnemyRef != encounters.Count - 1) { //and its not the last one
@@ -121,10 +129,11 @@ public class Progression : MonoBehaviour {
         int RandomNumber = Random.Range(0, 20);
         if (RandomNumber <= 10)
         {
-            newLastEnemy = Instantiate(enemyTypes[0], offscreenEnemies, enemyTypes[0].transform.rotation);        }
+            newLastEnemy = Instantiate(enemyTypes[0], offscreenEnemies, enemyTypes[0].transform.rotation);        
+        }
         else if (RandomNumber > 10)
         {
-            newLastEnemy = Instantiate(enemyTypes[1], offscreenEnemies, enemyTypes[1].transform.rotation);
+            newLastEnemy = Instantiate(enemyTypes[1], new Vector3(offscreenEnemies.x, offscreenEnemies.y + 2, offscreenEnemies.z), enemyTypes[1].transform.rotation);
         }
         return newLastEnemy;
     }

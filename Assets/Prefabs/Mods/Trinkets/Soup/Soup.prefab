@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6794398679122869556}
   - component: {fileID: 9133677018552025801}
   m_Layer: 0
-  m_Name: SoupTile
+  m_Name: Soup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
