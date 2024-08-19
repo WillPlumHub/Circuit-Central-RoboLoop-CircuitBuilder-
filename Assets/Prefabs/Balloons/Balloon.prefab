@@ -177,7 +177,7 @@ MonoBehaviour:
   randomNumber: 0
   lastNumber: 0
   maxAttempts: 10
-  moveSpeed: 2
+  moveSpeed: -2
   amplitude: 1
   frequency: 1
   inventory: {fileID: 0}

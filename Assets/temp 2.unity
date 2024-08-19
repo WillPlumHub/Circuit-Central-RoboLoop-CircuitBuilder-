@@ -3018,6 +3018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1969086428}
   SFXSource: {fileID: 1902077633}
+  progression: {fileID: 1125404066}
   musicChoice: 0
   BGM_LvL1: {fileID: 8300000, guid: 5cd9d937d2a47a94ab45c5a90c14d52c, type: 3}
   BGM_LvL2: {fileID: 8300000, guid: 16bc6d7dd7443a744a75da16c7bfb841, type: 3}
@@ -3028,19 +3029,19 @@ MonoBehaviour:
   WeDidIt: {fileID: 8300000, guid: 37b956d9e8d5e724593a68cd039e2835, type: 3}
   Wonderful: {fileID: 8300000, guid: 000c8bcedd2e86b4a93716219a777dc3, type: 3}
   MenuSelect: {fileID: 8300000, guid: e3a50ac892d1ed644a1d9012912ce764, type: 3}
-  SparkLaunch: {fileID: 0}
-  SparkEnd: {fileID: 0}
+  SparkLaunch: {fileID: 8300000, guid: 3c76d7774ae8d6a4cafbdebb79c86dd5, type: 3}
+  SparkEnd: {fileID: 8300000, guid: 52f69f7139f1ada45933aec4edaf5eb3, type: 3}
   SparkMoving: {fileID: 0}
-  SparkDeath: {fileID: 8300000, guid: 59c51006a09526344bdea6f8686e2198, type: 3}
+  SparkDeath: {fileID: 8300000, guid: e068916479e2acb4fbfdf3f096d218db, type: 3}
   RoboiDeath: {fileID: 8300000, guid: b8f1d8f17b4691749a6015fb2f77edaf, type: 3}
-  WeaponDeath: {fileID: 0}
+  WeaponDeath: {fileID: 8300000, guid: 6a1720d475e2738449161fda97a6492a, type: 3}
   WeaponFiring: {fileID: 0}
-  ModPlace: {fileID: 0}
+  ModPlace: {fileID: 8300000, guid: ea54740d3df950141a1e95f580593516, type: 3}
   EnemyShot: {fileID: 8300000, guid: 51d9d89d3c487e24b9aa05b46514fd96, type: 3}
   EnemyDeath: {fileID: 8300000, guid: 8e5d79dbc2e0fa147ae04d24346e5750, type: 3}
-  CardSelect: {fileID: 0}
-  BalloonPop: {fileID: 0}
-  BalloonMove: {fileID: 0}
+  CardSelect: {fileID: 8300000, guid: bb7752b6064d8ad4ea18b3645203edd9, type: 3}
+  BalloonPop: {fileID: 8300000, guid: 5bf3f2948372de448b2e5c014a984db7, type: 3}
+  BalloonMove: {fileID: 8300000, guid: 5bf3f2948372de448b2e5c014a984db7, type: 3}
 --- !u!4 &852514787
 Transform:
   m_ObjectHideFlags: 0
@@ -3383,7 +3384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d7fdb2f9fb6245bf3462ce31ef99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 5
   element: Fire
   hostile: 1
   isAttacking: 0
@@ -4926,6 +4927,7 @@ GameObject:
   - component: {fileID: 1125404065}
   - component: {fileID: 1125404066}
   - component: {fileID: 1125404067}
+  - component: {fileID: 1125404068}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5032,6 +5034,7 @@ MonoBehaviour:
   timeToResetBattle: 2
   sparkMove: {fileID: 1125404065}
   resetEnemy: 0
+  ceaseFire: {fileID: 1125404068}
   timer: 0
   active: 0
 --- !u!114 &1125404067
@@ -5048,6 +5051,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 1393580040}
   OptionMenu: {fileID: 1836819279}
+--- !u!114 &1125404068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125404061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6737ff2c45bf89469ae94d5b7e3b5eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inBetween: 0
+  weapons: []
 --- !u!1 &1134192025
 GameObject:
   m_ObjectHideFlags: 0

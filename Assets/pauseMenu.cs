@@ -63,7 +63,7 @@ public class pauseMenu : MonoBehaviour {
     public void GoToMainMenu() {
         SFXPlay();
         Time.timeScale = 1f;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("StartMenu");
     }
 
     public void DAnim() {

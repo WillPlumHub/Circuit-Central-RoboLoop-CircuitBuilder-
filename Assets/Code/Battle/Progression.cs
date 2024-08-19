@@ -19,6 +19,7 @@ public class Progression : MonoBehaviour {
     public float timeToResetBattle;
     public SparkMove sparkMove;
     public bool resetEnemy = false;
+    public ceaseFire ceaseFire;
     
     [Header("Timer")]
     public float timer = 0;
@@ -31,7 +32,6 @@ public class Progression : MonoBehaviour {
 
         if (resetEnemy) {
             enemyReload();
-            
         }
     }
 
@@ -76,12 +76,10 @@ public class Progression : MonoBehaviour {
 
     IEnumerator resetBattle() {
         sparkMove.boostMult = 10;
-
+        ceaseFire.inBetween = true;
         yield return new WaitForSeconds(timeToResetBattle);
-        Debug.Log("THT");
-
         resetEnemy = true;
-        Debug.Log("HTH");
+        ceaseFire.inBetween = false;
     }
 
     //void 

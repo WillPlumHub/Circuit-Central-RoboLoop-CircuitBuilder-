@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour {
     [Header("Audio Sources")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
+    public Progression progression;
 
     [Header("Music")]
     public float musicChoice;
@@ -45,9 +46,40 @@ public class AudioManager : MonoBehaviour {
     public AudioClip BalloonMove;
     #endregion
 
-    void Start () {
-        musicSource.clip = BGM_LvL1;
+    void Start() {
+        progression = GameObject.FindGameObjectWithTag("Player").GetComponent<Progression>();
+        if (progression != null) {
+            if (progression.difficulty == 1) {
+                musicSource.clip = BGM_LvL1;
+            }
+            if (progression.difficulty == 2) {
+                musicSource.clip = BGM_LvL2;
+            }
+            if (progression.difficulty == 3) {
+                musicSource.clip = BGM_LvL3;
+            }
+        } else {
+            musicSource.clip = BGM_LvL1;
+            //musicSource.clip = BGM_LvL2;
+            //musicSource.clip = BGM_LvL3;
+        }
         musicSource.Play();
+    }
+
+    void Update () {
+        /*if (progression.difficulty == 1)
+        {
+            musicSource.clip = BGM_LvL1;
+        }
+        if (progression.difficulty == 2)
+        {
+            musicSource.clip = BGM_LvL2;
+        }
+        if (progression.difficulty == 3)
+        {
+            musicSource.clip = BGM_LvL3;
+        }
+        musicSource.Play();*/
     }
 
     public void PlaySFX(AudioClip clip) {
