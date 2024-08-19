@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d7fdb2f9fb6245bf3462ce31ef99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 25
   element: Ice
   hostile: 0
   isAttacking: 0

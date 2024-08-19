@@ -12,9 +12,13 @@ public class Progression : MonoBehaviour {
     [Header("Enemy List")]
     public List<GameObject> encounters = new List<GameObject>();
     public List<Transform> progressionPositions = new List<Transform>();
+    public List<GameObject> enemyTypes = new List<GameObject>();
     public int currEnemyRef = 0;
     public Vector3 enemyPlace;
+    public Vector3 offscreenEnemies;
     public float moveSpeed = 1;
+    private GameObject newLastEnemy;
+
 
     [Header("Battle Reset")]
     public float timeToResetBattle;
@@ -57,15 +61,24 @@ public class Progression : MonoBehaviour {
                 isEnemyDead = true;
                 StartCoroutine(resetBattle());
 
-                difficulty += 0.4f;
+                difficulty += 0.2f;
+                Debug.Log("Encounters length " + encounters.Count);
+                for (int i = 0; i < encounters.Count - 1; i++) //shuffle list forwards
+                {
+                    Debug.Log(" i = " + i);
+                    encounters[i] = encounters[i + 1];
+                }
+                GameObject newLastEnemy = summonEnemy();
+                encounters[4] = newLastEnemy;
 
-                if (currEnemyRef != encounters.Count - 1) { //and its not the last one
-                    Debug.Log("Not the last");
-                    currEnemyRef++;
-                }
-                else { //If it is the last in the list
-                    Debug.Log("End of list");
-                }
+                /*
+                                if (currEnemyRef != encounters.Count - 1) { //and its not the last one
+                                    Debug.Log("Not the last");
+                                    currEnemyRef++;
+                                }
+                                else { //If it is the last in the list
+                                    Debug.Log("End of list");
+                                }*/
             }
         }
         else { //all enemies have died
@@ -83,6 +96,8 @@ public class Progression : MonoBehaviour {
         {
             resetEnemy = false;
             encounters[currEnemyRef].GetComponent<Enemy>().isAttacking = true;
+            encounters[currEnemyRef].GetComponent<Enemy>().ProgressionMultiplier();
+
         }
     }
 
@@ -100,5 +115,17 @@ public class Progression : MonoBehaviour {
         ceaseFire.inBetween = false;
     }
 
-    //void 
+    public GameObject summonEnemy()
+    {
+        Debug.Log("Summoning");
+        int RandomNumber = Random.Range(0, 20);
+        if (RandomNumber <= 10)
+        {
+            newLastEnemy = Instantiate(enemyTypes[0], offscreenEnemies, enemyTypes[0].transform.rotation);        }
+        else if (RandomNumber > 10)
+        {
+            newLastEnemy = Instantiate(enemyTypes[1], offscreenEnemies, enemyTypes[1].transform.rotation);
+        }
+        return newLastEnemy;
+    }
 }

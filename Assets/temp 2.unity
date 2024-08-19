@@ -5047,9 +5047,14 @@ MonoBehaviour:
   - {fileID: 1029164937}
   - {fileID: 1233206533}
   - {fileID: 2030844904}
-  progressionPositions: []
+  - {fileID: 2030844904}
+  progressionPositions:
+  - {fileID: 8433915553276227474, guid: e6abc050ca8354645a1f335f5679bf81, type: 3}
+  - {fileID: 2953192233117575258, guid: 615270d9357dd044ab908f83eaabffa9, type: 3}
+  enemyTypes: []
   currEnemyRef: 0
   enemyPlace: {x: 3.56, y: -11.258, z: 0}
+  offscreenEnemies: {x: 0, y: 0, z: 0}
   moveSpeed: 10
   timeToResetBattle: 2
   sparkMove: {fileID: 1125404065}
@@ -6455,7 +6460,7 @@ MonoBehaviour:
   health: 5
   Level: 1
   levelUp: 0
-  rawDamage: 0
+  rawDamage: 5
   damageDealt: 0
   elementalBonus: 1.5
   elementalEffect: 

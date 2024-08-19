@@ -63,4 +63,9 @@ public class Enemy : MonoBehaviour {
         yield return new WaitForSeconds(firingRate / prog.difficulty);
         isAttacking = true;
     }
+
+    public void ProgressionMultiplier()
+    {
+        health = (float)Mathf.Pow(health * prog.difficulty, 1.2f);
+    }
 }
