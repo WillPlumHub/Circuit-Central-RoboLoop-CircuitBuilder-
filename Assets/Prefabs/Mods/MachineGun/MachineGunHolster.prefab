@@ -208,7 +208,7 @@ MonoBehaviour:
   health: 1
   Level: 1
   levelUp: 0
-  rawDamage: 0
+  rawDamage: 1
   damageDealt: 0
   elementalBonus: 1.5
   elementalEffect: 

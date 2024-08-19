@@ -102,11 +102,13 @@ MonoBehaviour:
   health: 1
   Level: 1
   levelUp: 0
-  damage: 3
+  rawDamage: 5
+  damageDealt: 0
   elementalBonus: 1.5
   elementalEffect: 
   enemy: {fileID: 0}
   BattleCam: {fileID: 0}
+  Progression: {fileID: 0}
   projectile: {fileID: 610069474776579919, guid: bb11d0e434d1f2540a960ab369ff6b32, type: 3}
   spawnPoint: {fileID: 0}
   firingRate: 1
@@ -116,6 +118,7 @@ MonoBehaviour:
   delayTime: 0
   player: {fileID: 0}
   RoboStats: {fileID: 0}
+  modifierHandler: {fileID: 0}
 --- !u!58 &7443763753610029279
 CircleCollider2D:
   m_ObjectHideFlags: 0

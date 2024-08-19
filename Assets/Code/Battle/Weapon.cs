@@ -74,8 +74,8 @@ public class Weapon : MonoBehaviour {
             } else {
                 enemy.health -= damageDealt;
             }
-            modifierHandler.DamageBoost = 0;
         }
+        modifierHandler.DamageBoost = 0;
     }
 
     IEnumerator delay() {
