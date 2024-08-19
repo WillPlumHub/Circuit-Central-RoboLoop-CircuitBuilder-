@@ -10,6 +10,7 @@ public class pauseMenu : MonoBehaviour {
     public GameObject OptionMenu;
     public static bool isPaused;
     AudioManager audioManager;
+    public GameObject healthBar;
     #endregion
 
     void Awake() {
@@ -19,6 +20,7 @@ public class pauseMenu : MonoBehaviour {
     void Start() {
         Menu.SetActive(false);
         OptionMenu.SetActive(false);
+        healthBar = GameObject.Find("HealthBar");
     }
     
     void Update() {
@@ -34,6 +36,7 @@ public class pauseMenu : MonoBehaviour {
 
     void PauseGame() {
         Menu.SetActive(true);
+        healthBar.SetActive(false);
         SFXPlay();
         Time.timeScale = 0f;
         isPaused = true;
@@ -41,6 +44,7 @@ public class pauseMenu : MonoBehaviour {
 
     public void UnpauseGame() {
         Menu.SetActive(false);
+        healthBar.SetActive(true);
         SFXPlay();
         Time.timeScale = 1f;
         AudioListener.pause = false;
