@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 2252409198414553449}
   - component: {fileID: 3703678949529546217}
   - component: {fileID: 4202169312840740275}
+  - component: {fileID: 5813058697671746913}
   m_Layer: 0
   m_Name: MachineGunHolster
   m_TagString: Untagged
@@ -207,7 +208,8 @@ MonoBehaviour:
   health: 1
   Level: 1
   levelUp: 0
-  damage: 3
+  rawDamage: 0
+  damageDealt: 0
   elementalBonus: 1.5
   elementalEffect: 
   enemy: {fileID: 0}
@@ -222,3 +224,39 @@ MonoBehaviour:
   delayTime: 0
   player: {fileID: 0}
   RoboStats: {fileID: 0}
+  modifierHandler: {fileID: 0}
+--- !u!58 &5813058697671746913
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796974753580595886}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
