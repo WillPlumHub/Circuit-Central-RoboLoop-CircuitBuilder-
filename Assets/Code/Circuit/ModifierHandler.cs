@@ -10,6 +10,7 @@ public class ModifierHandler : MonoBehaviour
 {
     public RobotStatus RoboStats;
     public Tilemap tilemap;
+    public int DamageBoost = 0;
     void Start()
     {
         RoboStats = FindObjectOfType<RobotStatus>();
