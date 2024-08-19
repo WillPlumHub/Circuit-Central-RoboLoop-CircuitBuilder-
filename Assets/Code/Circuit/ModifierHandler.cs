@@ -66,8 +66,16 @@ public class ModifierHandler : MonoBehaviour
             if (recipient == "DamageMult") { toLevel.GetComponent<DamageMultMechanic>().level++; }
             if (recipient == "SpeedBoost") { toLevel.GetComponent<SpeedBoostMechanic>().level++; }
 
-
-
+            toLevel.transform.Find("LevelUpAnim").GetComponent<SpriteRenderer>().enabled = true;
+            toLevel.transform.Find("LevelUpAnim").GetComponent<Animator>().SetTrigger("LevelUp");
+            StartCoroutine(LevelAnimDeactivate(toLevel));
         }
+    }
+
+    public IEnumerator LevelAnimDeactivate(GameObject toLevel)
+    {
+        yield return new WaitForSeconds(0.7f);
+        toLevel.transform.Find("LevelUpAnim").GetComponent<SpriteRenderer>().enabled = false;
+
     }
 }
