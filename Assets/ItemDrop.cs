@@ -54,17 +54,17 @@ public class ItemDrop : MonoBehaviour {
     void CollectDrops(List<Modifier> possibleItems) {
         foreach (Modifier item in possibleItems) {
 
-            Debug.Log("SlotID: " + item.slotID + " Tile Array Max: " + inventory.inventory.Count + " Mod Array Count: " + inventory.modifiers.Count + " Modded slotID: " + (item.slotID - inventory.inventory.Count - 1));
+            //Debug.Log("SlotID: " + item.slotID + " Tile Array Max: " + inventory.inventory.Count + " Mod Array Count: " + inventory.modifiers.Count + " Modded slotID: " + (item.slotID - inventory.inventory.Count - 1));
 
             if (item.slotID < inventory.inventory.Count) {
-                Debug.Log("Old amount: " + inventory.inventory[item.slotID].amount + " of slotID: " + item.slotID);
+               // Debug.Log("Old amount: " + inventory.inventory[item.slotID].amount + " of slotID: " + item.slotID);
                 inventory.inventory[item.slotID].amount++;
-                Debug.Log("New amount: " + inventory.inventory[item.slotID].amount);
+                //Debug.Log("New amount: " + inventory.inventory[item.slotID].amount);
             }
             else {
-                Debug.Log("Old amount: " + inventory.modifiers[item.slotID - inventory.inventory.Count - 1].amount + " of slotID: " + item.slotID);
+                //Debug.Log("Old amount: " + inventory.modifiers[item.slotID - inventory.inventory.Count - 1].amount + " of slotID: " + item.slotID);
                 inventory.modifiers[item.slotID - inventory.inventory.Count - 1].amount++;
-                Debug.Log("New amount: " + inventory.modifiers[item.slotID - inventory.inventory.Count - 1].amount);
+                //Debug.Log("New amount: " + inventory.modifiers[item.slotID - inventory.inventory.Count - 1].amount);
             }
         }
     }

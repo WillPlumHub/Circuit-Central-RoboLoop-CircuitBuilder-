@@ -67,21 +67,43 @@ public class TilePlacer : MonoBehaviour {
 
     private void PlaceModifier(Vector3Int gridPos) {
         if (Tilemap.HasTile(gridPos) && currMod.amount > 0 && Tilemap.GetTile(gridPos).name != currMod.name) {
+            RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            foreach(RaycastHit2D hit in hits)
+            {
+                if(hit.transform.gameObject.GetComponent<BoxCollider2D>() || hit.transform.gameObject.GetComponent<BoxCollider2D>())
+                {
+                    string strippedRay = hit.transform.gameObject.name.Replace("(Clone)", "");
+                    string strippedMod = currMod.modifier.name.Replace("(Clone)", "");
+                    Debug.Log(" status: " + strippedRay + " " + strippedMod);
+                    if (strippedRay == currMod.modifier.name)
+                    {
+                        modHandler.LevelUpModifier(currMod.modifier);
+                        return;
+                    }
+                    else
+                    {
+                        Debug.Log("Failed to place; Different mod already present in location");
+                        return;
+                    }
+                }
+            }
             currMod.amount--;
-            inventory.modifiers[inventory_Item - inventory.inventory.Count] = currMod;
-            GameObject tileOverlay = Instantiate(currMod.modifier, new Vector3(gridPos.x + .5f, gridPos.y + .5f, (float)gridPos.z), Quaternion.identity);
-            tileOverlay.GetComponent<SpriteRenderer>().sprite = currMod.overlaySprite;
-            tileOverlay.GetComponent<SpriteRenderer>().sortingOrder = 3;
-            modHandler.SetupMod(tileOverlay);
-            Debug.Log("Functional");
+
+                inventory.modifiers[inventory_Item - inventory.inventory.Count] = currMod;
+                GameObject tileOverlay = Instantiate(currMod.modifier, new Vector3(gridPos.x + .5f, gridPos.y + .5f, (float)gridPos.z), Quaternion.identity);
+                tileOverlay.GetComponent<SpriteRenderer>().sprite = currMod.overlaySprite;
+                tileOverlay.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                modHandler.SetupMod(tileOverlay);
+                Debug.Log("Functional");
+            
         }
     }
 
     private void HandleKeyboardInput() {
-        if (Input.GetKey("1")) inventory_Item = 0;
-        else if (Input.GetKey("2")) inventory_Item = 1;
-        else if (Input.GetKey("3")) inventory_Item = 2;
-        else if (Input.GetKey("4")) inventory_Item = 3;
+        if (Input.GetKey("1")) inventory_Item = 11;
+        else if (Input.GetKey("2")) inventory_Item = 5;
+        else if (Input.GetKey("3")) inventory_Item = 6;
+        else if (Input.GetKey("4")) inventory_Item = 7;
 
         if (inventory_Item < 0) inventory_Item = 0;
         else if (inventory_Item >= inventory.inventory.Count + inventory.modifiers.Count) inventory_Item = inventory.inventory.Count + inventory.modifiers.Count - 1;

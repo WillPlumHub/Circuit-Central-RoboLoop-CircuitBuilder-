@@ -5,6 +5,7 @@ using UnityEngine;
 public class CloverMechanic : MonoBehaviour
 {
     Progression progression;
+    public int level = 1;
     void Start()
     {
         progression = FindObjectOfType<Progression>();
