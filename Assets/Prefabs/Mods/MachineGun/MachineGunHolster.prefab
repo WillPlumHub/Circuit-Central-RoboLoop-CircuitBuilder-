@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4299721252386363777}
   - component: {fileID: 884996294662439593}
   - component: {fileID: 884012272037398434}
+  - component: {fileID: 3099305862757019363}
   m_Layer: 0
   m_Name: MachineGun
   m_TagString: Untagged
@@ -106,6 +107,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3099305862757019363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6552148100425575146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f62ef88254e5b647b2051014c7926d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6796974753580595886
 GameObject:
   m_ObjectHideFlags: 0
