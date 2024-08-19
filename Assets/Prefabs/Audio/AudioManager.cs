@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour {
     public AudioClip WeDidIt;
     public AudioClip Wonderful;
     public AudioClip MenuSelect;
+    public AudioClip Airbud;
 
     [Header("Spark SFX")]
     public AudioClip SparkLaunch;
