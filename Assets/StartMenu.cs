@@ -38,6 +38,13 @@ public class StartMenu : MonoBehaviour {
         OptionMenu.SetActive(false);
     }
 
+    public void titleWakeAnim() {
+        Menu.GetComponent<Animator>().SetTrigger("StartHover");
+    }
+    public void titleIdleAnim() {
+        Menu.GetComponent<Animator>().SetTrigger("EmptyHover");
+    }
+
     public void SFXPlay() {
         audioManager.PlaySFX(audioManager.MenuSelect);
     }
