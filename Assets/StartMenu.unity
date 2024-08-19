@@ -970,7 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 978929478}
   OptionMenu: {fileID: 73442753}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 1850052958}
 --- !u!4 &546297258
 Transform:
   m_ObjectHideFlags: 0

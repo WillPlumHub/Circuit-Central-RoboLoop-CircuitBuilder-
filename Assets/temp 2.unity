@@ -6263,6 +6263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 1393580040}
   OptionMenu: {fileID: 1836819279}
+  ItemAmounts: {fileID: 710340937}
+  healthBar: {fileID: 0}
 --- !u!114 &1125404068
 MonoBehaviour:
   m_ObjectHideFlags: 0

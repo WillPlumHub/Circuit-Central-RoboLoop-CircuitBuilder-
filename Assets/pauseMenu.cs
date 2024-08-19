@@ -8,6 +8,7 @@ public class pauseMenu : MonoBehaviour {
     #region Variables
     public GameObject Menu;
     public GameObject OptionMenu;
+    public GameObject ItemAmounts;
     public static bool isPaused;
     AudioManager audioManager;
     public GameObject healthBar;
@@ -19,6 +20,7 @@ public class pauseMenu : MonoBehaviour {
 
     void Start() {
         Menu.SetActive(false);
+        ItemAmounts.SetActive(true);
         OptionMenu.SetActive(false);
         healthBar = GameObject.Find("HealthBar");
     }
@@ -35,19 +37,20 @@ public class pauseMenu : MonoBehaviour {
     }
 
     void PauseGame() {
+        Time.timeScale = 0f;
         Menu.SetActive(true);
+        ItemAmounts.SetActive(false);
         healthBar.SetActive(false);
         SFXPlay();
-        Time.timeScale = 0f;
         isPaused = true;
     }
 
     public void UnpauseGame() {
+        Time.timeScale = 1f; 
         Menu.SetActive(false);
+        ItemAmounts.SetActive(true);
         healthBar.SetActive(true);
         SFXPlay();
-        Time.timeScale = 1f;
-        AudioListener.pause = false;
         isPaused = false;
     }
 
@@ -64,7 +67,6 @@ public class pauseMenu : MonoBehaviour {
     }
 
     public void GoToMainMenu() {
-        AudioListener.pause = false;
         SFXPlay();
         Time.timeScale = 1f;
         SceneManager.LoadScene("StartMenu");
