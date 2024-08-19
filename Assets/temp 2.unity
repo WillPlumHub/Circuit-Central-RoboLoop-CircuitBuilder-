@@ -3127,6 +3127,7 @@ MonoBehaviour:
   WeDidIt: {fileID: 8300000, guid: 37b956d9e8d5e724593a68cd039e2835, type: 3}
   Wonderful: {fileID: 8300000, guid: 000c8bcedd2e86b4a93716219a777dc3, type: 3}
   MenuSelect: {fileID: 8300000, guid: e3a50ac892d1ed644a1d9012912ce764, type: 3}
+  Airbud: {fileID: 8300000, guid: 5c1d2a037e7d217418ebb6afe4558df6, type: 3}
   SparkLaunch: {fileID: 8300000, guid: 3c76d7774ae8d6a4cafbdebb79c86dd5, type: 3}
   SparkEnd: {fileID: 8300000, guid: 52f69f7139f1ada45933aec4edaf5eb3, type: 3}
   SparkMoving: {fileID: 8300000, guid: 7dc031482fe5b744f9dd6fdeac285dc7, type: 3}
@@ -3482,7 +3483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d7fdb2f9fb6245bf3462ce31ef99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 15
   element: Fire
   hostile: 1
   isAttacking: 0
@@ -3786,7 +3787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e2d7fdb2f9fb6245bf3462ce31ef99c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 50
   element: Fire
   hostile: 1
   isAttacking: 0
@@ -7492,7 +7493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -21.000122}
+  m_AnchoredPosition: {x: 0, y: -21}
   m_SizeDelta: {x: 0, y: -422.254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1836819281
