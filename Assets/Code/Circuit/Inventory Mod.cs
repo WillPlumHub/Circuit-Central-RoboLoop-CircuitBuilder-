@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryMod : MonoBehaviour {
 
@@ -15,6 +19,7 @@ public class InventoryMod : MonoBehaviour {
     [Header("Component References")]
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCol;
+    public TextMeshPro Text;
     #endregion
 
     private void Start() {
@@ -36,6 +41,20 @@ public class InventoryMod : MonoBehaviour {
         else {
             spriteRenderer.color = new Color(1, 1, 1, 1);
         }
+
+        amountUpdate();
+
+        if (tilePlacer.inventory_Item == slotID) {
+            Debug.Log("CLICKED");
+            gameObject.GetComponent<Animator>().SetTrigger("Select");
+        } else {
+            gameObject.GetComponent<Animator>().SetTrigger("Unselect");
+        }
+
+    }
+
+    void amountUpdate() {
+        Text.text = tilePlacer.inventory_Item.ToString();
     }
 
     private void OnMouseDown() {

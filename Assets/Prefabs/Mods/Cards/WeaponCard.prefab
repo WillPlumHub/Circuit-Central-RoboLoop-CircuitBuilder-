@@ -77,16 +77,16 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: 5e0113f2db6277d4c850966eb7b38f0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!222 &8451999187943746292
@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 2248179697469915792}
   - component: {fileID: 138817113719922436}
   - component: {fileID: 8515319059058689478}
+  - component: {fileID: 8446043708852749550}
   m_Layer: 0
   m_Name: WeaponCard
   m_TagString: Item
@@ -173,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 02d97755126fcf148a345b19402ec366, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93ffac3d2dd23b644ac9e193bcbc4d6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -241,6 +242,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f46905820530bc428df79841ce086cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotID: 3
+  slotID: 10
   tilePlacer: {fileID: 0}
-  modifier: {fileID: 11400000, guid: 1df6cbae72ad78840bac1ac311addcfd, type: 2}
+  modifier: {fileID: 11400000, guid: 5db3ef908e8709a45a160549ad21bfc1, type: 2}
+--- !u!95 &8446043708852749550
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595022369141951516}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74e65546e8c69dc40aa798f3f3be5b3f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
