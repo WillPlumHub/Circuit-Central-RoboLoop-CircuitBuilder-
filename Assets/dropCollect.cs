@@ -18,7 +18,7 @@ public class dropCollect : MonoBehaviour {
             Debug.Log("Alpha: " + newCol.a);
             rendererr.material.color = newCol;
         } else {
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 0.2f);
         }
     }
 }
