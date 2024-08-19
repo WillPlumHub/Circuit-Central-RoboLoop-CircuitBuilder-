@@ -11,6 +11,7 @@ public class Progression : MonoBehaviour {
 
     [Header("Enemy List")]
     public List<GameObject> encounters = new List<GameObject>();
+    public List<Transform> progressionPositions = new List<Transform>();
     public int currEnemyRef = 0;
     public Vector3 enemyPlace;
     public float moveSpeed = 1;
