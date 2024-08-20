@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlamethrowerMod
   m_EditorClassIdentifier: 
   itemName: 
-  slotID: 0
+  slotID: 13
   overlaySprite: {fileID: -1054978088, guid: ebaf2d7ca4b754b4bbda6ddce8389a0c, type: 3}
   modifier: {fileID: 7460511470537660899, guid: af513c54ec3e3d44ca903b37ec620a23, type: 3}
   amount: 0

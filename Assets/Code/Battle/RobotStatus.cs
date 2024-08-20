@@ -77,7 +77,7 @@ public class RobotStatus : MonoBehaviour {
 
     void UpdateSlider()
     {
-        Slider healthBar = this.transform.Find("Canvas").transform.GetChild(0).GetComponent<Slider>();
+        Slider healthBar = transform.Find("BattleCanvas").GetChild(0).GetComponent<Slider>();
         healthBar.maxValue = RoboMaxHealth;
         healthBar.value = RoboHealth;
 

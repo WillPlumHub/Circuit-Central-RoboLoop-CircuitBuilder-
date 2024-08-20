@@ -79,6 +79,7 @@ public class TilePlacer : MonoBehaviour {
                     Debug.Log(" status: " + strippedRay + " " + strippedMod);
                     if (strippedRay == currMod.modifier.name) {
                         modHandler.LevelUpModifier(hit.transform.gameObject);
+                        currMod.amount--;
                         return;
                     } else {
                         Debug.Log("Failed to place; Different mod already present in location");
