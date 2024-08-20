@@ -661,9 +661,7 @@ RectTransform:
   m_Children:
   - {fileID: 1393580041}
   - {fileID: 1836819280}
-
   - {fileID: 1832554284}
-
   m_Father: {fileID: 1816809333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2605,7 +2603,7 @@ GameObject:
   - component: {fileID: 418116552}
   - component: {fileID: 418116551}
   m_Layer: 0
-  m_Name: Battle Canvas
+  m_Name: BattleCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2956,8 +2954,8 @@ MonoBehaviour:
   - {fileID: 380353632}
   - {fileID: 1278559259}
   - {fileID: 40902448}
-  RoboHealth: 15
-  RoboMaxHealth: 29
+  RoboHealth: 20
+  RoboMaxHealth: 20
   sceneToLoad: StartMenu
   GameOver: {fileID: 1832554283}
 --- !u!212 &462765273
@@ -4444,7 +4442,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610472737
 MonoBehaviour:
@@ -4650,7 +4648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &642033443
 RectTransform:
   m_ObjectHideFlags: 0
