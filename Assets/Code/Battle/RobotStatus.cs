@@ -4,6 +4,7 @@ using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class RobotStatus : MonoBehaviour {
 
@@ -20,19 +21,24 @@ public class RobotStatus : MonoBehaviour {
     public int RoboHealth = 10;
     public int RoboMaxHealth = 10;
     public string sceneToLoad = "StartMenu";
+    public GameObject GameOver;
 
     AudioManager audioManager;
     #endregion
 
+    private void Start() {
+        GameOver.SetActive(false);
+    }
+
     void Update() {
         if (RoboHealth <= 0) {
+            GameOver.SetActive(true);
             Debug.Log("GAME OVER BITCHES");
             GetComponent<Animator>().SetBool("Dead", true);
             StartCoroutine(OnDeath());
             //send part of that damage to the weapons
         }
-        if(RoboHealth > RoboMaxHealth)
-        {
+        if(RoboHealth > RoboMaxHealth) {
             RoboHealth = RoboMaxHealth;
         }
         UpdateSlider();
