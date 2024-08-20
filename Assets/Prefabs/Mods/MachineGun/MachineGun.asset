@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MachineGun
   m_EditorClassIdentifier: 
   itemName: 
-  slotID: 5
+  slotID: 12
   overlaySprite: {fileID: -1054978088, guid: ebaf2d7ca4b754b4bbda6ddce8389a0c, type: 3}
   modifier: {fileID: 6796974753580595886, guid: d44c38fdfa54c9f4a802501b3da4ed91, type: 3}
   amount: 0

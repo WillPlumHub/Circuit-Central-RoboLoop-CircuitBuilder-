@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LuckyClover
   m_EditorClassIdentifier: 
   itemName: 
-  slotID: 0
+  slotID: 7
   overlaySprite: {fileID: -1132883914, guid: 6dda8d139dfac9e479213fff04391daf, type: 3}
   modifier: {fileID: 7953965960992402324, guid: 8cb4749de4f2a784db5be55e160f26c8, type: 3}
   amount: 0
