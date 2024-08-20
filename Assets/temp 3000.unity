@@ -2047,7 +2047,7 @@ MonoBehaviour:
   - {fileID: 1278559259}
   - {fileID: 40902448}
   RoboHealth: 10
-  RoboMaxHealth: 10
+  RoboMaxHealth: 25
   sceneToLoad: StartMenu
 --- !u!212 &462765273
 SpriteRenderer:
@@ -5068,6 +5068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 1393580040}
   OptionMenu: {fileID: 1836819279}
+  ItemAmounts: {fileID: 0}
   healthBar: {fileID: 0}
 --- !u!114 &1125404068
 MonoBehaviour:

@@ -16,5 +16,6 @@ public class HeartMechanic : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         roboStats.RoboMaxHealth += 1 + (2 * (level - 1));
+        roboStats.RoboHealth += 1 + (2 * (level - 1));
     }
 }

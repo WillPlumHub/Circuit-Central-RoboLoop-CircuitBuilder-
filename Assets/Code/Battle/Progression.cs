@@ -125,7 +125,7 @@ public class Progression : MonoBehaviour {
 
     public GameObject summonEnemy()
     {
-        Debug.Log("Summoning");
+        //Debug.Log("Summoning");
         int RandomNumber = Random.Range(0, 20);
         if (RandomNumber <= 10)
         {

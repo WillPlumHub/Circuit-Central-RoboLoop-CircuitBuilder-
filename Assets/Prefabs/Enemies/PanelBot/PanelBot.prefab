@@ -166,7 +166,7 @@ Transform:
   m_GameObject: {fileID: 7650588760879622904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.786617, y: -4.0833864, z: 0}
+  m_LocalPosition: {x: 10, y: -15, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
+  damage: 1
   element: Ice
   hostile: 1
   isAttacking: 0
@@ -288,7 +289,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 413366d8737c145479ed80fe73dfa647, type: 2}
   - {fileID: 11400000, guid: 060a2f2e6beeadf4895a3eae9dd4d2e8, type: 2}
   - {fileID: 11400000, guid: 5db3ef908e8709a45a160549ad21bfc1, type: 2}
+  - {fileID: 11400000, guid: ee6ac76305b3b1e4b8dcd066861a81c3, type: 2}
   dropSpawns:
+  - {fileID: 3566559078604261081}
   - {fileID: 3566559078604261081}
   - {fileID: 3566559078604261081}
   - {fileID: 3566559078604261081}

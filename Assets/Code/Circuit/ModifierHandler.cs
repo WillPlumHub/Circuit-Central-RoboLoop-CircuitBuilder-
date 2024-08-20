@@ -52,7 +52,10 @@ public class ModifierHandler : MonoBehaviour
         Debug.Log("Leveling" + toLevel.name);
         if (toLevel.GetComponent<SpriteRenderer>().sprite.name == "Modifiers_5")
         {
+            toLevel.transform.Find("LevelUpAnim").GetComponent<SpriteRenderer>().enabled = true;
+            toLevel.transform.Find("LevelUpAnim").GetComponent<Animator>().SetTrigger("LevelUp");
             toLevel.GetComponent<Weapon>().Level++;
+            StartCoroutine(LevelAnimDeactivate(toLevel));
         }
         else
         {
