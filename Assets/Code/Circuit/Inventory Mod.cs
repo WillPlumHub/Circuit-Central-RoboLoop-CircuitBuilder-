@@ -17,7 +17,7 @@ public class InventoryMod : MonoBehaviour {
     public Modifier modifier;
 
     [Header("Component References")]
-    SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     BoxCollider2D boxCol;
     public TMP_Text Text;
     #endregion
@@ -25,23 +25,18 @@ public class InventoryMod : MonoBehaviour {
     private void Start() {
         tilePlacer = FindObjectOfType<TilePlacer>();
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        //spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>(); //GetComponent<SpriteRenderer>();
+        //Debug.Log(spriteRenderer);
         spriteRenderer.enabled = false;
         boxCol = gameObject.GetComponent<BoxCollider2D>();
         boxCol.enabled = false;
     }
 
     void Update() {
-        if (gameObject.GetComponent<Renderer>().enabled == false && modifier.amount > 0) {
+        /*if (gameObject.GetComponent<Renderer>().enabled == false && modifier.amount > 0) {
             gameObject.GetComponent<Renderer>().enabled = true;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        }
-        else if (modifier.amount <= 0) {
-            spriteRenderer.color = new Color(0, 1, 0, 1);
-        }
-        else {
-            spriteRenderer.color = new Color(1, 1, 1, 1);
-        }
+        }*/
 
         amountUpdate();
 

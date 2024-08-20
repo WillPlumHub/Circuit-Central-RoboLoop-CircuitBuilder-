@@ -16,5 +16,5 @@ MonoBehaviour:
   slotID: 0
   overlaySprite: {fileID: -634626345, guid: 6dda8d139dfac9e479213fff04391daf, type: 3}
   modifier: {fileID: 1962158584764369503, guid: 4669e64717fb08c488d9b00264419f43, type: 3}
-  amount: 13
-  dropRate: 30
+  amount: 17
+  dropRate: 60
