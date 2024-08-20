@@ -44,7 +44,7 @@ public class InventoryMod : MonoBehaviour {
         amountUpdate();
 
         if (tilePlacer.inventory_Item == slotID) {
-            Debug.Log("CLICKED");
+            //Debug.Log("CLICKED");
             gameObject.GetComponent<Animator>().SetTrigger("Select");
         } else {
             gameObject.GetComponent<Animator>().SetTrigger("Unselect");

@@ -16,7 +16,7 @@ public class ProgressionChart : MonoBehaviour
         {
             for (int i = 0; i < ChartLocations.Count - 1; i++)
             {
-                Debug.Log("state: " + ChartLocations[i].position + " " + ChartEnemies[i].name + ChartEnemies[i].transform.position);
+                //Debug.Log("state: " + ChartLocations[i].position + " " + ChartEnemies[i].name + ChartEnemies[i].transform.position);
                 if (Vector3.Distance(ChartEnemies[i].transform.position, ChartLocations[i].transform.position) > 0.01f)
                 {
                     ChartEnemies[i].transform.position = Vector3.MoveTowards(ChartEnemies[i].transform.position, ChartLocations[i].transform.position, moveSpeed * Time.deltaTime);
@@ -36,7 +36,7 @@ public class ProgressionChart : MonoBehaviour
         for (int i = 0; i < ChartEnemies.Count - 1; i++) //shuffle list forwards
         {
             
-            Debug.Log(" chartenemies = " + i);
+            //Debug.Log(" chartenemies = " + i);
             ChartEnemies[i] = ChartEnemies[i + 1];
         }
         

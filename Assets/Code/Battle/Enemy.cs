@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour {
 
     void Update() {
 
-        if (hostile && health > 0 && spawnPoint != null && isAttacking) {
+        if (hostile && health > 0 && isAttacking) {
             StartCoroutine(attacking());
             isAttacking = false;
         }
@@ -58,6 +58,7 @@ public class Enemy : MonoBehaviour {
 
     IEnumerator attacking() {
         GetComponent<Animator>().SetTrigger("IsAttacking");
+        Debug.Log("Attacking! Enemy firing: " + this.gameObject.name);
         yield return new WaitForSeconds(0.2f);
         audioManager.PlaySFX(audioManager.EnemyShot);
         status.RoboHealth -= (int)(damage * prog.difficulty);

@@ -19,7 +19,7 @@ public class SoupMechanic : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         int procs = 5;
-        AddHealthOverTime(procs + 2 * level, (int)1+(level / 3));
+        StartCoroutine(AddHealthOverTime(procs + 2 * level, (int)1+(level / 3)));
     }
 
     IEnumerator AddHealthOverTime(int Procs, int HealAmount)

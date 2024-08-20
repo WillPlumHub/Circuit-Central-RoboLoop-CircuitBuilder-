@@ -107,6 +107,7 @@ MonoBehaviour:
   moveSpeed: -1
   amplitude: 0.5
   frequency: 1.5
+  timer: 0
   inventory: {fileID: 0}
   item: {fileID: 0}
 --- !u!58 &6343385058526704164
@@ -156,9 +157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 220beac5384774444b05514058ccb62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lootDrop: {fileID: 0}
   drops:
   - {fileID: 11400000, guid: 5db3ef908e8709a45a160549ad21bfc1, type: 2}
   - {fileID: 11400000, guid: 1df6cbae72ad78840bac1ac311addcfd, type: 2}
+  - {fileID: 11400000, guid: ee6ac76305b3b1e4b8dcd066861a81c3, type: 2}
   dropSpawns: []
   dropBoost: 1
   inventory: {fileID: 0}
@@ -180,6 +183,7 @@ MonoBehaviour:
   moveSpeed: -2
   amplitude: 1
   frequency: 1
+  timer: 0
   inventory: {fileID: 0}
   item: {fileID: 0}
 --- !u!95 &1563848643649789953
