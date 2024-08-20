@@ -31,7 +31,7 @@ public class PowerBar : MonoBehaviour
         powerBarMin = powerBarSlider.minValue;
         powerBarMax = powerBarSlider.maxValue;
 
-        powerBarChargeSpeed = UnityEngine.Random.Range(.1F, 1F);
+        powerBarChargeSpeed = UnityEngine.Random.Range(2f, 2.5f);
     }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class PowerBar : MonoBehaviour
                 if (currentSliderValue == powerBarMax)
                 {
                     powerBarSlider.value = 0;
-                    powerBarChargeSpeed = UnityEngine.Random.Range(.1F, 1F);
+                    powerBarChargeSpeed = UnityEngine.Random.Range(2f, 2.5f);
                 }
 
                 if (currentSliderValue < powerBarMax)

@@ -72,20 +72,15 @@ public class TilePlacer : MonoBehaviour {
     private void PlaceModifier(Vector3Int gridPos) {
         if (Tilemap.HasTile(gridPos) && currMod.amount > 0 && Tilemap.GetTile(gridPos).name != currMod.name) {
             RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            foreach(RaycastHit2D hit in hits)
-            {
-                if(hit.transform.gameObject.GetComponent<BoxCollider2D>() || hit.transform.gameObject.GetComponent<CircleCollider2D>())
-                {
+            foreach(RaycastHit2D hit in hits) {
+                if(hit.transform.gameObject.GetComponent<BoxCollider2D>() || hit.transform.gameObject.GetComponent<CircleCollider2D>()) {
                     string strippedRay = hit.transform.gameObject.name.Replace("(Clone)", "");
                     string strippedMod = currMod.modifier.name.Replace("(Clone)", "");
                     Debug.Log(" status: " + strippedRay + " " + strippedMod);
-                    if (strippedRay == currMod.modifier.name)
-                    {
+                    if (strippedRay == currMod.modifier.name) {
                         modHandler.LevelUpModifier(hit.transform.gameObject);
                         return;
-                    }
-                    else
-                    {
+                    } else {
                         Debug.Log("Failed to place; Different mod already present in location");
                         return;
                     }
@@ -104,10 +99,15 @@ public class TilePlacer : MonoBehaviour {
     }
 
     private void HandleKeyboardInput() {
-        if (Input.GetKey("1")) inventory_Item = 11;
+        if (Input.GetKey("1")) inventory_Item = 4;
         else if (Input.GetKey("2")) inventory_Item = 5;
         else if (Input.GetKey("3")) inventory_Item = 6;
         else if (Input.GetKey("4")) inventory_Item = 7;
+        else if (Input.GetKey("5")) inventory_Item = 8;
+        else if (Input.GetKey("6")) inventory_Item = 9;
+        else if (Input.GetKey("7")) inventory_Item = 10;
+        else if (Input.GetKey("8")) inventory_Item = 11;
+        else if (Input.GetKey("9")) inventory_Item = 12;
 
         if (inventory_Item < 0) inventory_Item = 0;
         else if (inventory_Item >= inventory.inventory.Count + inventory.modifiers.Count) inventory_Item = inventory.inventory.Count + inventory.modifiers.Count - 1;
