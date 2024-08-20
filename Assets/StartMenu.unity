@@ -555,7 +555,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Please Use Mouse.
 
-    1-0 are item shortcuts'
+    1-9 are item shortcuts'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a010aea830bd514c87fb0a038f85157, type: 2}
   m_sharedMaterial: {fileID: 7510669755151003891, guid: 8a010aea830bd514c87fb0a038f85157, type: 2}
