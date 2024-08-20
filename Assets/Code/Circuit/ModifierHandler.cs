@@ -29,6 +29,10 @@ public class ModifierHandler : MonoBehaviour
             Debug.Log("Setting New Weapon Up");
             ModWeapon.Level = 1;
             Transform spawnPoint = RoboStats.WeaponSlotSetup();
+            if(spawnPoint.gameObject.name == "OverloadSlot")
+            {
+                ModWeapon.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+            }
             ModWeapon.spawnPoint = spawnPoint;
             ModWeapon.spawnPoint.position = spawnPoint.position;
             Modifier.transform.GetChild(0).transform.position = spawnPoint.position;

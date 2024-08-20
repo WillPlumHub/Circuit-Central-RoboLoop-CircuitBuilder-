@@ -73,6 +73,7 @@ public class ItemDrop : MonoBehaviour {
         if (possibleItems != null && possibleItems.Count > 0) {
             if (dropSpawns.Count != 0) {
                 for (int i = 0; i < Mathf.Min(dropSpawns.Count, possibleItems.Count); i++) {
+                    Debug.Log(possibleItems[i].modifier);
                     lootDrop = Instantiate(possibleItems[i].modifier, dropSpawns[i].position, Quaternion.identity);
                     lootDrop.AddComponent<dropCollect>();
                     lootDrop.AddComponent<Rigidbody2D>();
