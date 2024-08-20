@@ -20,6 +20,7 @@ public class InventoryMod : MonoBehaviour {
     public SpriteRenderer spriteRenderer;
     BoxCollider2D boxCol;
     public TMP_Text Text;
+    public TMP_Text Desc;
     #endregion
 
     private void Start() {
@@ -28,15 +29,17 @@ public class InventoryMod : MonoBehaviour {
         //spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer>(); //GetComponent<SpriteRenderer>();
         //Debug.Log(spriteRenderer);
         spriteRenderer.enabled = false;
+        Desc.enabled = false;
         boxCol = gameObject.GetComponent<BoxCollider2D>();
         boxCol.enabled = false;
     }
 
     void Update() {
-        /*if (gameObject.GetComponent<Renderer>().enabled == false && modifier.amount > 0) {
-            gameObject.GetComponent<Renderer>().enabled = true;
+        if (spriteRenderer.enabled == false && modifier.amount > 0) {
+            Desc.enabled = true;
+            spriteRenderer.enabled = true;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
-        }*/
+        }
 
         amountUpdate();
 

@@ -533,6 +533,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8515319059058689478, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      propertyPath: Desc
+      value: 
+      objectReference: {fileID: 1084231102}
+    - target: {fileID: 8515319059058689478, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: Text
       value: 
       objectReference: {fileID: 720913575}
@@ -1796,6 +1800,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8515319059058689478, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      propertyPath: Desc
+      value: 
+      objectReference: {fileID: 1784255501}
     - target: {fileID: 8515319059058689478, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: Text
       value: 
@@ -5831,6 +5839,10 @@ PrefabInstance:
       value: BoostCard Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8145865972856366084, guid: dacdc9f54b96fb14fabfe6cc60469e09, type: 3}
+      propertyPath: Desc
+      value: 
+      objectReference: {fileID: 718974191}
+    - target: {fileID: 8145865972856366084, guid: dacdc9f54b96fb14fabfe6cc60469e09, type: 3}
       propertyPath: Text
       value: 
       objectReference: {fileID: 1981411780}
@@ -7113,6 +7125,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5204967934687915080, guid: 7064b0b722b42d84c9e7d0c5c20361a0, type: 3}
+      propertyPath: Desc
+      value: 
+      objectReference: {fileID: 761495356}
+    - target: {fileID: 5204967934687915080, guid: 7064b0b722b42d84c9e7d0c5c20361a0, type: 3}
       propertyPath: Text
       value: 
       objectReference: {fileID: 1109439059}
@@ -7807,6 +7823,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5204967934687915080, guid: 7064b0b722b42d84c9e7d0c5c20361a0, type: 3}
+      propertyPath: Desc
+      value: 
+      objectReference: {fileID: 1269916351}
+    - target: {fileID: 5204967934687915080, guid: 7064b0b722b42d84c9e7d0c5c20361a0, type: 3}
       propertyPath: Text
       value: 
       objectReference: {fileID: 118047651}
@@ -8467,6 +8487,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5204967934687915080, guid: 7064b0b722b42d84c9e7d0c5c20361a0, type: 3}
+      propertyPath: Desc
+      value: 
+      objectReference: {fileID: 1844333257}
     - target: {fileID: 5204967934687915080, guid: 7064b0b722b42d84c9e7d0c5c20361a0, type: 3}
       propertyPath: Text
       value: 
@@ -10515,6 +10539,10 @@ PrefabInstance:
       value: BoostCard Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8145865972856366084, guid: dacdc9f54b96fb14fabfe6cc60469e09, type: 3}
+      propertyPath: Desc
+      value: 
+      objectReference: {fileID: 905797865}
+    - target: {fileID: 8145865972856366084, guid: dacdc9f54b96fb14fabfe6cc60469e09, type: 3}
       propertyPath: Text
       value: 
       objectReference: {fileID: 357771130}
@@ -10756,6 +10784,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8515319059058689478, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
+      propertyPath: Desc
+      value: 
+      objectReference: {fileID: 500870727}
     - target: {fileID: 8515319059058689478, guid: fd096809ef37e0542b40ae60bb686e26, type: 3}
       propertyPath: Text
       value: 
@@ -12187,6 +12219,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5204967934687915080, guid: 7064b0b722b42d84c9e7d0c5c20361a0, type: 3}
+      propertyPath: Desc
+      value: 
+      objectReference: {fileID: 64046346}
     - target: {fileID: 5204967934687915080, guid: 7064b0b722b42d84c9e7d0c5c20361a0, type: 3}
       propertyPath: Text
       value: 
