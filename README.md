@@ -21,7 +21,7 @@ Endless Replayability: Survive increasingly difficult enemy waves in a self-cont
 # Technologies & Architecture:
 Unity (C#) – Custom gameplay systems;
 
-Scriptable Objects: Used extensively to define modular item behaviors and abilities for flexible content creation.
+Scriptable Objects - Used extensively to define modular item behaviors and abilities for flexible content creation.
 
 
 # Current Progress & Next Steps:
